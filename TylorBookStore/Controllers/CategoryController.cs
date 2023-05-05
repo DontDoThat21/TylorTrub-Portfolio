@@ -26,9 +26,24 @@ namespace TylorBookStore.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
-            _bookstore.Categories.Add(obj);
-            _bookstore.SaveChanges();
-            return RedirectToAction("Index");
+            if (obj.Name == obj.DisplayOrder.ToString()) 
+            {
+                ModelState.AddModelError("name", "The Display Order cannot exactly match the name.");
+            }
+            if (obj.Name != null && obj.Name.ToLower() == "test") 
+            {
+                ModelState.AddModelError("", "Test is an invalid value.");
+            }
+            if (ModelState.IsValid)
+            {
+                _bookstore.Categories.Add(obj);
+                _bookstore.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }
