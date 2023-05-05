@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TylorBookStore.Data;
 
@@ -10,9 +11,11 @@ using TylorBookStore.Data;
 namespace TylorBookStore.Migrations
 {
     [DbContext(typeof(BookStoreDBContext))]
-    partial class BookStoreDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230505172550_SeedCategoryTable")]
+    partial class SeedCategoryTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
