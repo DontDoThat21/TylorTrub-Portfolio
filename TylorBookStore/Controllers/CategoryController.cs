@@ -22,5 +22,13 @@ namespace TylorBookStore.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Create(Category obj)
+        {
+            _bookstore.Categories.Add(obj);
+            _bookstore.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
