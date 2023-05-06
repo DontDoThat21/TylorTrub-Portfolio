@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TylorBookStore.Data;
+using TylorPortfolio.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

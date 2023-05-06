@@ -4,7 +4,7 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace TylorBookStore.Migrations
+namespace TylorPortfolio.Migrations
 {
     /// <inheritdoc />
     public partial class SeedCategoryTable : Migration

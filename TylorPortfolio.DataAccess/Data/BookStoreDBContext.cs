@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TylorBookStore.Models;
+using TylorPortfolio.Models;
 
-namespace TylorBookStore.Data
+namespace TylorPortfolio.Data
 {
     public class BookStoreDBContext : DbContext
     {
