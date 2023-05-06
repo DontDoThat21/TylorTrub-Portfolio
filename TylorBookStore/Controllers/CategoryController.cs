@@ -52,6 +52,11 @@ namespace TylorBookStore.Controllers
             {
                 return NotFound();
             }
+            Category catFromDB = _bookstore.Categories.Find(id);
+            if (catFromDB == null)
+            {
+                return NotFound();
+            }
             return View();
         }
 
