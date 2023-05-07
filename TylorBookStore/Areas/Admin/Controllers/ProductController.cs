@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TylorTrubPortfolio.DataAccess.Data;
 using TylorTrubPortfolio.DataAccess.Repository.IRepository;
@@ -9,15 +10,20 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
     [Area("Admin")]
     public class ProductController : Controller
     {
-        private readonly IProductRepository _bookstore;
-        public ProductController(IProductRepository db)
+        private readonly IUnitOfWork _unitOfWork;
+        public ProductController(IUnitOfWork db)
         {
-            _bookstore = db;
+            _unitOfWork = db;
         }
 
         public IActionResult Index()
         {
-            List<Product> products = _bookstore.GetAll().ToList();
+            List<Product> products = _unitOfWork.Product.GetAll().ToList();
+            IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category
+                .GetAll().Select(c=> new SelectListItem
+                {
+                    Text = c.Name // implement unit of work and understand why needed
+                });
             return View(products);
         }
 
@@ -31,8 +37,8 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _bookstore.Add(obj);
-                _bookstore.Save();
+                _unitOfWork.Product.Add(obj);
+                _unitOfWork.Save();
                 TempData["success"] = "Product created successfully";
                 return RedirectToAction("Index");
             }
@@ -48,7 +54,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Product? catFromDB = _bookstore.GetFirstOrDefault(u => u.Id == id);
+            Product? catFromDB = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
             if (catFromDB == null)
             {
                 return NotFound();
@@ -59,13 +65,13 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Product? obj = _bookstore.GetFirstOrDefault(u => u.Id == id);
+            Product? obj = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
             }
-            _bookstore.Remove(obj);
-            _bookstore.Save();
+            _unitOfWork.Product.Remove(obj);
+            _unitOfWork.Save();
             TempData["success"] = "Product deleted successfully";
             return RedirectToAction("Index");
         }
@@ -77,7 +83,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Product? productFromDB = _bookstore.GetFirstOrDefault(u => u.Id == id);
+            Product? productFromDB = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
             if (productFromDB == null)
             {
                 return NotFound();
@@ -90,8 +96,8 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _bookstore.Update(obj);
-                _bookstore.Save();
+                _unitOfWork.Product.Update(obj);
+                _unitOfWork.Save();
                 TempData["success"] = "Product updated successfully";
                 return RedirectToAction("Index");
             }
