@@ -17,6 +17,7 @@ builder.Services.AddDbContext<MotorcycleDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MotorcycleConnection")));
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 

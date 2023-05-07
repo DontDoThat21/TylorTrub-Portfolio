@@ -21,9 +21,9 @@ namespace TylorTrubPortfolio.DataAccess.Repository
             _db.SaveChanges();
         }
 
-        public void Update(Category obj)
+        public void Update(Product obj)
         {
-            _db.Categories.Update(obj);
+            _db.Products.Update(obj);
         }
     }
 }
