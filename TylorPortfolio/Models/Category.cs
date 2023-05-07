@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace TylorBookStore.Models
+namespace TylorPortfolio.Models
 {
     public class Category
     {

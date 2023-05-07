@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TylorBookStore.Data;
+using TylorPortfolio.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<BookStoreDBContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+    .UseSqlServer(builder.Configuration.GetConnectionString("MotorcycleConnection")));
 
 var app = builder.Build();
 

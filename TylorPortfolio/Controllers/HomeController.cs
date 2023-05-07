@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using TylorBookStore.Models;
+using TylorPortfolio.Models;
 
-namespace TylorBookStore.Controllers
+namespace TylorPortfolio.Controllers
 {
     public class HomeController : Controller
     {

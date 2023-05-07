@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TylorBookStore.Data;
-using TylorBookStore.Models;
+using TylorPortfolio.Data;
+using TylorPortfolio.Models;
 
-namespace TylorBookStore.Controllers
+namespace TylorPortfolio.Controllers
 {
     public class CategoryController : Controller
     {

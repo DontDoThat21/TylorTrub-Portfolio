@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TylorBookStore.Data;
+using TylorPortfolio.Data;
 
 #nullable disable
 
-namespace TylorBookStore.Migrations
+namespace TylorPortfolio.Migrations
 {
     [DbContext(typeof(BookStoreDBContext))]
     [Migration("20230505181327_SeedCategoryTable2")]

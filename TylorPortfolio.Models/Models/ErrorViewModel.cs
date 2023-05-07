@@ -1,4 +1,4 @@
-namespace TylorBookStore.Models
+namespace TylorPortfolio.Models
 {
     public class ErrorViewModel
     {

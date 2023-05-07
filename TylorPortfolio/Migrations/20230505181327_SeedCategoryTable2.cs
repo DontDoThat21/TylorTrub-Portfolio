@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace TylorBookStore.Migrations
+namespace TylorPortfolio.Migrations
 {
     /// <inheritdoc />
     public partial class SeedCategoryTable2 : Migration
