@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TylorPortfolio.Data;
-using TylorPortfolio.Models;
+using TylorTrubPortfolio.Data;
+using TylorTrubPortfolio.Models;
 
-namespace TylorPortfolio.Controllers
+namespace TylorTrubPortfolio.Controllers
 {
     public class CategoryController : Controller
     {

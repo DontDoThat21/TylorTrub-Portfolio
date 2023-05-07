@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace TylorPortfolio.Migrations
+namespace TylorTrubPortfolio.Migrations
 {
     /// <inheritdoc />
     public partial class SeedCategoryTable2 : Migration

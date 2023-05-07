@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TylorPortfolio.Data;
+using TylorTrubPortfolio.Data;
 
 #nullable disable
 
-namespace TylorPortfolio.Migrations
+namespace TylorTrubPortfolio.Migrations
 {
     [DbContext(typeof(BookStoreDBContext))]
     partial class BookStoreDBContextModelSnapshot : ModelSnapshot

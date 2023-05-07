@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace TylorPortfolio.Migrations
+namespace TylorTrubPortfolio.Migrations
 {
     /// <inheritdoc />
     public partial class AddCategoryTableToDb : Migration

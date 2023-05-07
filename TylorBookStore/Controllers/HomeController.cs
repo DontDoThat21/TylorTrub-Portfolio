@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using TylorPortfolio.Models;
+using TylorTrubPortfolio.Models;
 
-namespace TylorPortfolio.Controllers
+namespace TylorTrubPortfolio.Controllers
 {
     public class HomeController : Controller
     {

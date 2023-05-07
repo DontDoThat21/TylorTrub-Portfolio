@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TylorPortfolio.Models\TylorPortfolio.Models.csproj" />
+    <ProjectReference Include="..\TylorPortfolio.Models\TylorTrubPortfolio.Models.csproj" />
   </ItemGroup>
 
 </Project>

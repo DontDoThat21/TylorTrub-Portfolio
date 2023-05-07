@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TylorPortfolio.DataAccess\TylorTrubPortfolio.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TylorPortfolio.Data;
+using TylorTrubPortfolio.Data;
 
 #nullable disable
 
-namespace TylorPortfolio.Migrations
+namespace TylorTrubPortfolio.Migrations
 {
     [DbContext(typeof(BookStoreDBContext))]
     [Migration("20230505170949_AddCategoryTableToDb")]
