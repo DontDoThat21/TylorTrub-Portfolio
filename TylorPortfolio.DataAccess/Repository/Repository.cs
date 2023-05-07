@@ -61,12 +61,12 @@ namespace TylorTrubPortfolio.DataAccess.Repository
             return query.ToList();
         }
 
-        public void Delete(T entity)
+        public void Remove(T entity)
         {
             dbSet.Remove(entity);
         }
 
-        public void DeleteRange(IEnumerable<T> entity)
+        public void RemoveRange(IEnumerable<T> entity)
         {
             dbSet.RemoveRange(entity);
         }

@@ -1,21 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TylorTrubPortfolio.DataAccess.Data;
+using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly BookStoreDBContext _bookstore;
-        public CategoryController(BookStoreDBContext db)
+        private readonly ICategoryRepository _bookstore;
+        public CategoryController(ICategoryRepository db)
         {
             _bookstore = db;
         }
 
         public IActionResult Index()
         {
-            List<Category> categories = _bookstore.Categories.ToList();
+            List<Category> categories = _bookstore.GetAll().ToList();
             return View(categories);
         }
 
@@ -37,8 +38,8 @@ namespace TylorTrubPortfolio.Controllers
             }
             if (ModelState.IsValid)
             {
-                _bookstore.Categories.Add(obj);
-                _bookstore.SaveChanges();
+                _bookstore.Add(obj);
+                _bookstore.Save();
                 TempData["success"] = "Category created successfully";
                 return RedirectToAction("Index");
             }
@@ -54,7 +55,7 @@ namespace TylorTrubPortfolio.Controllers
             {
                 return NotFound();
             }
-            Category? catFromDB = _bookstore.Categories.Find(id);
+            Category? catFromDB = _bookstore.GetFirstOrDefault(u=>u.Id==id);
             if (catFromDB == null)
             {
                 return NotFound();
@@ -65,13 +66,13 @@ namespace TylorTrubPortfolio.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category? obj = _bookstore.Categories.Find(id);
+            Category? obj = _bookstore.GetFirstOrDefault(u=>u.Id==id);
             if (obj == null)
             {
                 return NotFound();
             }
-            _bookstore.Categories.Remove(obj);
-            _bookstore.SaveChanges();
+            _bookstore.Remove(obj);
+            _bookstore.Save();
             TempData["success"] = "Category deleted successfully";
             return RedirectToAction("Index");
         }
@@ -83,7 +84,7 @@ namespace TylorTrubPortfolio.Controllers
             {
                 return NotFound();
             }
-            Category? catFromDB = _bookstore.Categories.Find(id);
+            Category? catFromDB = _bookstore.GetFirstOrDefault(u=>u.Id==id);
             if (catFromDB == null)
             {
                 return NotFound();
@@ -96,8 +97,8 @@ namespace TylorTrubPortfolio.Controllers
         {
             if (ModelState.IsValid)
             {
-                _bookstore.Categories.Update(obj);
-                _bookstore.SaveChanges();
+                _bookstore.Update(obj);
+                _bookstore.Save();
                 TempData["success"] = "Category updated successfully";
                 return RedirectToAction("Index");
             }
