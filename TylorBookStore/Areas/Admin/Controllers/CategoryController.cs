@@ -4,7 +4,7 @@ using TylorTrubPortfolio.DataAccess.Data;
 using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 using TylorTrubPortfolio.Models;
 
-namespace TylorTrubPortfolio.Controllers
+namespace TylorTrubPortfolio.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {
@@ -28,11 +28,11 @@ namespace TylorTrubPortfolio.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
-            if (obj.Name == obj.DisplayOrder.ToString()) 
+            if (obj.Name == obj.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("name", "The Display Order cannot exactly match the name.");
             }
-            if (obj.Name != null && obj.Name.ToLower() == "test") 
+            if (obj.Name != null && obj.Name.ToLower() == "test")
             {
                 ModelState.AddModelError("", "Test is an invalid value.");
             }
@@ -55,7 +55,7 @@ namespace TylorTrubPortfolio.Controllers
             {
                 return NotFound();
             }
-            Category? catFromDB = _bookstore.GetFirstOrDefault(u=>u.Id==id);
+            Category? catFromDB = _bookstore.GetFirstOrDefault(u => u.Id == id);
             if (catFromDB == null)
             {
                 return NotFound();
@@ -66,7 +66,7 @@ namespace TylorTrubPortfolio.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category? obj = _bookstore.GetFirstOrDefault(u=>u.Id==id);
+            Category? obj = _bookstore.GetFirstOrDefault(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
@@ -84,7 +84,7 @@ namespace TylorTrubPortfolio.Controllers
             {
                 return NotFound();
             }
-            Category? catFromDB = _bookstore.GetFirstOrDefault(u=>u.Id==id);
+            Category? catFromDB = _bookstore.GetFirstOrDefault(u => u.Id == id);
             if (catFromDB == null)
             {
                 return NotFound();

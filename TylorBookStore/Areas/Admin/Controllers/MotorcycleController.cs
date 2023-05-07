@@ -2,7 +2,7 @@
 using TylorTrubPortfolio.DataAccess.Data;
 using TylorTrubPortfolio.Models;
 
-namespace TylorTrubPortfolio.Controllers
+namespace TylorTrubPortfolio.Areas.Admin.Controllers
 {
     public class MotorcycleController : Controller
     {

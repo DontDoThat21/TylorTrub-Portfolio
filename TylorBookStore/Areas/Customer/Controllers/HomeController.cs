@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using TylorTrubPortfolio.Models;
 
-namespace TylorTrubPortfolio.Controllers
+namespace TylorTrubPortfolio.Areas.Customer.Controllers
 {
     public class HomeController : Controller
     {

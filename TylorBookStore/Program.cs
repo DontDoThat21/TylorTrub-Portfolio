@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TylorTrubPortfolio.DataAccess.Data;
+using TylorTrubPortfolio.DataAccess.Repository;
+using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 
 // ignore
 
@@ -13,6 +15,8 @@ builder.Services.AddDbContext<BookStoreDBContext>(options =>
 
 builder.Services.AddDbContext<MotorcycleDBContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("MotorcycleConnection")));
+
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 var app = builder.Build();
 
@@ -33,6 +37,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{area:Customer}/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
