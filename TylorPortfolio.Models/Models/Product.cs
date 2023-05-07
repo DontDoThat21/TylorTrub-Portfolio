@@ -5,16 +5,17 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TylorTrubPortfolio.Models
 {
     public class Product
     {
         [Key]
-        [DisplayName("Category Id")]
+        [DisplayName("Product Id")]
         public int Id { get; set; }
         [Required]
-        [DisplayName("Category Name")]
+        [DisplayName("Product Name")]
         [DefaultValue("")]
         public string Title { get; set; }
         public string Description { get; set; }
@@ -41,5 +42,10 @@ namespace TylorTrubPortfolio.Models
         [Display(Name = "Price for 100+")]
         [Range(1, 1000)]
         public double Price100 { get; set; }
+
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

@@ -17,8 +17,8 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            List<Product> categories = _bookstore.GetAll().ToList();
-            return View(categories);
+            List<Product> products = _bookstore.GetAll().ToList();
+            return View(products);
         }
 
         public IActionResult Create()
