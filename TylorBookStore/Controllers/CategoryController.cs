@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TylorTrubPortfolio.Data;
+using TylorTrubPortfolio.DataAccess.Data;
 using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.Controllers

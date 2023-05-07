@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TylorTrubPortfolio.Data;
+using TylorTrubPortfolio.DataAccess.Data;
 
 // ignore
 
@@ -10,6 +10,9 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<BookStoreDBContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddDbContext<MotorcycleDBContext>(options => 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MotorcycleConnection")));
 
 var app = builder.Build();
 

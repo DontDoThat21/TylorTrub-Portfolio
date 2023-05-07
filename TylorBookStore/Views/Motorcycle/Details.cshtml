@@ -1,0 +1,37 @@
+﻿<h1>Motorcycle details:</h1>
+
+@model Motorcycle
+<form method="post">
+    <table class="table">
+        <tr>
+            <th>
+                @Model.MotorcycleName
+                </th>
+                <th>
+                @Model.Torque)
+                </th>
+                <th>
+                @Model.Hp)
+                </th>
+                <th>
+                @Model.EngineStyle)
+                </th>
+            </tr>
+        </table>
+
+        <button type="submit">Buy</button>
+
+    <h2>TEST!</h2>
+
+    <h1>Motorcycle Selected - You clicked @TempData["MotorcycleDescription"]</h1>
+    <img src="@ViewData["MotorcycleImageUri"]" alt="Motorcycle selection" width="300" height="169" />
+
+    <p>Price: $9,929,999</p>
+    <p>Motorcycle CC's: @TempData["MotorcycleCCs"]</p>
+    <p>Manufacturer: @TempData["MotorcycleManufacturer"]</p>
+    <p>Year: @TempData["MotorcycleYear"]</p>
+    <p>Engine Config: @TempData["MotorcycleEngine"]</p>
+    <p>Torque: @TempData["MotorcycleTorque"]</p>
+    <p>Hp: @TempData["MotorcycleHP"]</p>
+    <p>Brakes: </p>
+</form>
