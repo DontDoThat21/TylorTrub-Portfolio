@@ -22,25 +22,65 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-white-50" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-seperator">
+                            |
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Motorcycles
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="Admin" asp-controller="Motorcycle" asp-action="Index">Motorcycles</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="Admin" asp-controller="Motorcycle" asp-action="Store">Store</a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>                      
+                        <li class="nav-seperator">
+                            |
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Books
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">Book Categories</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">Book Categories</a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                            </ul>
+                        </li>
+                        <li class="nav-seperator">
+                            |
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Games
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="Customer" asp-controller="Games" asp-action="Hangman">Hangman</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" asp-area="Customer" asp-controller="Games" asp-action="SimonSays">SimonSays</a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                            </ul>
                         </li>
                         <li class="nav-seperator">
                             |
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white-50" asp-controller="Category" asp-action="Index">Book Categories</a>
-                        </li>
-                        <li class="nav-seperator">
-                            |
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white-50" asp-controller="Motorcycle" asp-action="Index">Motorcycles</a>
-                        </li>
-                        <li class="nav-seperator">
-                            |
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white-50" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="Customer" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
                 </div>

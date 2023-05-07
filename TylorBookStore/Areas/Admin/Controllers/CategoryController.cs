@@ -6,6 +6,7 @@ using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly ICategoryRepository _bookstore;

@@ -4,6 +4,7 @@ using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class MotorcycleController : Controller
     {
 
