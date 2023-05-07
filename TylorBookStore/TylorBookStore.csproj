@@ -22,8 +22,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\TylorPortfolio.Models\TylorPortfolio.Models.csproj" />
-  </ItemGroup>
-
 </Project>
