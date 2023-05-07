@@ -5,13 +5,11 @@ VisualStudioVersion = 17.6.33626.354
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorBookStore", "TylorBookStore\TylorBookStore.csproj", "{2CEDF8C4-F32A-4CA9-9217-1D825C084A04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TylorBookStoreRazor_Temp", "TylorBookStoreRazor_Temp\TylorBookStoreRazor_Temp.csproj", "{59A55735-C0DB-4D97-954A-E45D1BD4D6D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorPortfolio.DataAccess", "TylorPortfolio.DataAccess\TylorPortfolio.DataAccess.csproj", "{DC1022D8-C23A-4C0F-B82F-4D649B7D179C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TylorPortfolio.DataAccess", "TylorPortfolio.DataAccess\TylorPortfolio.DataAccess.csproj", "{DC1022D8-C23A-4C0F-B82F-4D649B7D179C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorPortfolio.Models", "TylorPortfolio.Models\TylorPortfolio.Models.csproj", "{4ED8A550-FDE2-4323-AEFD-A3C662A50EB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TylorPortfolio.Models", "TylorPortfolio.Models\TylorPortfolio.Models.csproj", "{4ED8A550-FDE2-4323-AEFD-A3C662A50EB8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TylorPortfolio.Utility", "TylorPortfolio.Utility\TylorPortfolio.Utility.csproj", "{508D07F4-028D-4816-90E2-B0D31943D895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorPortfolio.Utility", "TylorPortfolio.Utility\TylorPortfolio.Utility.csproj", "{508D07F4-028D-4816-90E2-B0D31943D895}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{2CEDF8C4-F32A-4CA9-9217-1D825C084A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CEDF8C4-F32A-4CA9-9217-1D825C084A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CEDF8C4-F32A-4CA9-9217-1D825C084A04}.Release|Any CPU.Build.0 = Release|Any CPU
-		{59A55735-C0DB-4D97-954A-E45D1BD4D6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59A55735-C0DB-4D97-954A-E45D1BD4D6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59A55735-C0DB-4D97-954A-E45D1BD4D6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59A55735-C0DB-4D97-954A-E45D1BD4D6D8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC1022D8-C23A-4C0F-B82F-4D649B7D179C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC1022D8-C23A-4C0F-B82F-4D649B7D179C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC1022D8-C23A-4C0F-B82F-4D649B7D179C}.Release|Any CPU.ActiveCfg = Release|Any CPU
