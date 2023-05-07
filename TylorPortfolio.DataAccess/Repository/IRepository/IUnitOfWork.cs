@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.DataAccess.Repository.IRepository
 {
-    public interface IProductRepository : IRepository<Product>
+    public interface IUnitOfWork
     {
-        void Update(Product obj);
+        ICategoryRepository Category { get; }
+        IProductRepository Product { get; }
+
         void Save();
+
     }
 }
