@@ -78,6 +78,7 @@ namespace TylorTrubPortfolio.Controllers
 
         public IActionResult Edit(int? id)
         {
+            TempData["success"] = null;
             if (id == null || id == 0)
             {
                 return NotFound();
