@@ -27,8 +27,4 @@
     <ProjectReference Include="..\TylorPortfolio.DataAccess\TylorTrubPortfolio.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

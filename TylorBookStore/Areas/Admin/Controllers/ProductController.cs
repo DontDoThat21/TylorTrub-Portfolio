@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using TylorTrubPortfolio.DataAccess.Data;
 using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 using TylorTrubPortfolio.Models;
+using TylorTrubPortfolio.Models.ViewModels;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers
 {
@@ -28,33 +29,51 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             return View(products);
         }
 
-        public IActionResult Create()
+        public IActionResult Upsert(int? id)
         {
-            IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category
-                .GetAll().Select(c => new SelectListItem
+            ProductViewModel productVM = new()
+            {
+                CategoryList = _unitOfWork.Category.GetAll().Select(c => new SelectListItem
                 {
                     Text = c.Name,
                     Value = c.Id.ToString()
-                });
+                }),
+                Product = new Product()
+            };
+            if (id == null || id == 0)
+            {
+                // create
+                return View(productVM);
+            }
+            else
+            {
+                // update
+                productVM.Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
+                return View(productVM);
+            }
 
-            ViewBag.CategoryList = CategoryList;
-
-            return View();
+            
         }
 
         [HttpPost]
-        public IActionResult Create(Product obj)
+        public IActionResult Upsert(ProductViewModel productVM, IFormFile? file)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.Product.Add(obj);
+                _unitOfWork.Product.Add(productVM.Product);
                 _unitOfWork.Save();
                 TempData["success"] = "Product created successfully";
                 return RedirectToAction("Index");
             }
             else
             {
-                return View();
+                productVM.CategoryList = _unitOfWork.Category
+                .GetAll().Select(c => new SelectListItem
+                {
+                    Text = c.Name,
+                    Value = c.Id.ToString()
+                });
+                return View(productVM);
             }
         }
 
