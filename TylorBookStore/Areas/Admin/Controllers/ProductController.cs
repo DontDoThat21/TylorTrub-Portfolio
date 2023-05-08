@@ -30,6 +30,15 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
+            IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category
+                .GetAll().Select(c => new SelectListItem
+                {
+                    Text = c.Name,
+                    Value = c.Id.ToString()
+                });
+
+            ViewBag.CategoryList = CategoryList;
+
             return View();
         }
 
