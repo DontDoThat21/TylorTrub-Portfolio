@@ -22,7 +22,8 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category
                 .GetAll().Select(c=> new SelectListItem
                 {
-                    Text = c.Name // implement unit of work and understand why needed
+                    Text = c.Name,
+                    Value = c.Id.ToString()
                 });
             return View(products);
         }
