@@ -10,8 +10,8 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
     [Area("Admin")]
     public class CategoryController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
-        public CategoryController(IUnitOfWork unitOfWork)
+        private readonly IUnitOfWorkBookstore _unitOfWork;
+        public CategoryController(IUnitOfWorkBookstore unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TylorTrubPortfolio.DataAccess.Data;
+using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers
@@ -8,10 +9,10 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
     public class MotorcycleController : Controller
     {
 
-        private readonly MotorcycleDBContext _motorcycles;
-        public MotorcycleController(MotorcycleDBContext db)
+        private readonly IUnitOfWorkMotorcycle _motorcycles;
+        public MotorcycleController(IUnitOfWorkMotorcycle unitOfWork)
         {
-            _motorcycles = db;
+            _motorcycles = unitOfWork;
         }
 
         // GET: MotorcycleController
@@ -39,7 +40,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Motorcycle? motorFromDB = _motorcycles.Motorcycles.Find(id);
+            Motorcycle? motorFromDB = _motorcycles.Motorcycle.GetFirstOrDefault(u => u.Id == id);
             if (motorFromDB == null)
             {
                 return NotFound();
@@ -116,7 +117,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
         }
         public IActionResult Store()
         {
-            List<Motorcycle> motorcycles = _motorcycles.Motorcycles.ToList();
+            List<Motorcycle> motorcycles = _motorcycles.Motorcycle.GetAll().ToList();
             return View(motorcycles);
         }
     }

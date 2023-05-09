@@ -11,8 +11,8 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
     [Area("Admin")]
     public class ProductController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
-        public ProductController(IUnitOfWork db)
+        private readonly IUnitOfWorkBookstore _unitOfWork;
+        public ProductController(IUnitOfWorkBookstore db)
         {
             _unitOfWork = db;
         }

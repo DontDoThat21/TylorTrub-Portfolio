@@ -8,21 +8,22 @@ using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 
 namespace TylorTrubPortfolio.DataAccess.Repository
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWorkBookstore : IUnitOfWorkBookstore
     {
-        private BookStoreDBContext _db;
+        private BookStoreDBContext _bookstoreDb;
         public ICategoryRepository Category { get; private set; }
         public IProductRepository Product { get; private set; }
-        public UnitOfWork(BookStoreDBContext db)
+        public UnitOfWorkBookstore(BookStoreDBContext bookDb)
         {
-            _db = db;
-            Category = new CategoryRepository(_db);
-            Product = new ProductRepository(_db);
+            _bookstoreDb = bookDb;
+
+            Category = new CategoryRepository(_bookstoreDb);
+            Product = new ProductRepository(_bookstoreDb);
         }
 
         public void Save()
         {
-            _db.SaveChanges();        
+            _bookstoreDb.SaveChanges();        
         }
     }
 }

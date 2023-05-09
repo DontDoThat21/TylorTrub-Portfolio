@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace TylorTrubPortfolio.DataAccess.Repository.IRepository
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWorkMotorcycle
     {
-        ICategoryRepository Category { get; }
-        IProductRepository Product { get; }
+        IMotorcycleRepository Motorcycle { get; }
 
         void Save();
 
