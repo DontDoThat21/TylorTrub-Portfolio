@@ -8,12 +8,14 @@ using System.Threading.Tasks;
 
 namespace TylorTrubPortfolio.Models
 {
-    public class Games
+    public class SimonSays
     {
         [Key]
-        [DisplayName("Game Id")]
+        [DisplayName("Session Id")]
         public int Id { get; set; }
-        public required string GameName { get; set; }
-        public required string Preview { get; set; }
+
+        public string currentColor = "";
+
+        public int sequenceCounter { get; set; }
     }
 }

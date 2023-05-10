@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.Areas.Customer.Controllers
 {
@@ -17,7 +18,9 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
 
         public IActionResult SimonSays()
         {
-            return View();
+            // feed id through db.
+            SimonSays simon = new SimonSays();
+            return View(simon);
         }
     }
 }
