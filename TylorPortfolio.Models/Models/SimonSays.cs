@@ -11,8 +11,7 @@ namespace TylorTrubPortfolio.Models
     public class SimonSays
     {
         [Key]
-        [DisplayName("Session Id")]
-        [DefaultValue(-1)]
+        [DisplayName("Session Id")]        
         public int Id { get; set; }
 
         public string currentColor = "";
