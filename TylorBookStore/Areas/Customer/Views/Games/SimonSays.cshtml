@@ -1,1 +1,46 @@
-﻿<h1>Welcome to Simon says.</h1>
+﻿
+<div class="container" style="width: 100%; height:400%;">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Welcome to Simon Says
+            </h2>
+            <h3 class="text-primary">
+                Level: 0
+            </h3>
+        </div>        
+    </div>
+    <table class="table table-bordered">
+        <tr>
+            <th width="45%"></th>
+            <th width="5%"></th>
+            <th width="5%"></th>
+            <th width="45%"></th>
+        </tr>
+        <tr>
+            <td class="simon-says-td" colspan="2">
+                <button class="btn-simon-green btn-simon">test1</button>
+            </td>
+            <td class="simon-says-td" colspan="2">
+                <button class="btn-simon-red btn-simon">test2</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="align-content-md-center" colspan="4">
+                <div>
+                    <a asp-controller="Games" asp-action="SimonSays" class="btn btn-primary">
+                        <i class="bi bi-play-fill"></i> Press
+                    </a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="simon-says-td" colspan="2">
+                <button class="btn-simon-orange btn-simon">test3</button>
+            </td>
+            <td class="simon-says-td" colspan="2">
+                <button class="btn-simon-cyan btn-simon">test4</button>
+            </td>
+        </tr>
+    </table>
+</div>
