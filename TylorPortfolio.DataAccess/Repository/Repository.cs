@@ -23,20 +23,21 @@ namespace TylorTrubPortfolio.DataAccess.Repository
         /// </summary>
         /// <param name="book">BookStore and categories DB.</param>
         /// <param name="motorcycle">Motorcycle store, information, and CDN DB.</param>        
-        public Repository(DbContext _db)
+        public Repository(DbContext db)
         {
             try
             {
-                _bookStoreDBContext = (BookStoreDBContext?)_db;
-                this.dbSet = _db.Set<T>();
+                _bookStoreDBContext = (BookStoreDBContext?)db;
+                this.dbSet = _bookStoreDBContext.Set<T>();
+                _bookStoreDBContext.Products.Include(u => u.Category).Include(u => u.CategoryId);
             }
             catch (Exception)
             {
             }
             try
             {
-                _motorcycleDBContext = (MotorcycleDBContext?)_db;
-                this.dbSet = _db.Set<T>();
+                _motorcycleDBContext = (MotorcycleDBContext?)db;
+                this.dbSet = _motorcycleDBContext.Set<T>();
             }
             catch (Exception)
             {
@@ -46,18 +47,50 @@ namespace TylorTrubPortfolio.DataAccess.Repository
         public void Add(T entity)
         {
             dbSet.Add(entity);
-        }        
-
-        public T GetFirstOrDefault(Expression<Func<T, bool>> filter)
-        {
-            IQueryable<T> query = dbSet;
-            query = query.Where(filter);
-            return query.FirstOrDefault();
         }
 
-        public IEnumerable<T> GetAll()
+        public T Get(Expression<Func<T, bool>> filter, string? includeProperties = null, bool tracked = false)
+        {
+            IQueryable<T> query;
+            if (tracked)
+            {
+                query = dbSet;
+
+            }
+            else
+            {
+                query = dbSet.AsNoTracking();
+            }
+
+            query = query.Where(filter);
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                foreach (var includeProp in includeProperties
+                    .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProp);
+                }
+            }
+            return query.FirstOrDefault();
+
+        }
+
+        // Category, CategoryId
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter, string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                foreach (var includeProp in includeProperties
+                    .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProp);
+                }
+            }
             return query.ToList();
         }
 
@@ -70,5 +103,6 @@ namespace TylorTrubPortfolio.DataAccess.Repository
         {
             dbSet.RemoveRange(entity);
         }
+        
     }
 }

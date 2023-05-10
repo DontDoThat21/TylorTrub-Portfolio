@@ -50,7 +50,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             else
             {
                 // update
-                productVM.Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
+                productVM.Product = _unitOfWork.Product.Get(u => u.Id == id);
                 return View(productVM);
             }
 
@@ -118,7 +118,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Product? catFromDB = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
+            Product? catFromDB = _unitOfWork.Product.Get(u => u.Id == id);
             if (catFromDB == null)
             {
                 return NotFound();
@@ -129,7 +129,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Product? obj = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
+            Product? obj = _unitOfWork.Product.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Product? productFromDB = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
+            Product? productFromDB = _unitOfWork.Product.Get(u => u.Id == id);
             if (productFromDB == null)
             {
                 return NotFound();

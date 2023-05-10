@@ -40,7 +40,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Motorcycle? motorFromDB = _motorcycles.Motorcycle.GetFirstOrDefault(u => u.Id == id);
+            Motorcycle? motorFromDB = _motorcycles.Motorcycle.Get(u => u.Id == id, "");
             if (motorFromDB == null)
             {
                 return NotFound();

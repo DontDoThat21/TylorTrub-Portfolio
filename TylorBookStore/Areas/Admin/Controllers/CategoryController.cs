@@ -57,7 +57,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Category? catFromDB = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
+            Category? catFromDB = _unitOfWork.Category.Get(u => u.Id == id);
             if (catFromDB == null)
             {
                 return NotFound();
@@ -68,7 +68,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category? obj = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
+            Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
@@ -86,7 +86,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Category? catFromDB = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
+            Category? catFromDB = _unitOfWork.Category.Get(u => u.Id == id);
             if (catFromDB == null)
             {
                 return NotFound();
