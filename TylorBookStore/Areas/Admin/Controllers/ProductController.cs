@@ -21,7 +21,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            List<Product> products = _unitOfWork.Product.GetAll().ToList();
+            List<Product> products = _unitOfWork.Product.GetAll(includeProperties:"Category").ToList();
             IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category
                 .GetAll().Select(c=> new SelectListItem
                 {
@@ -85,6 +85,10 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
                     }
                     // saves our image in the db with our new guid.
                     productVM.Product.ImageUrl = @"\images\product\" + fileName;
+                }
+                else
+                {
+                    productVM.Product.ImageUrl = "";
                 }
 
                 if (productVM.Product.Id == 0)
@@ -167,5 +171,16 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             }
             return View();
         }
+
+        #region API CALLS
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
+            return Json(new { data = objProductList });
+        }
+
+        #endregion
     }
 }
