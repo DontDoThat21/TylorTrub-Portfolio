@@ -16,11 +16,17 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
             return View();
         }
 
-        public IActionResult SimonSays()
+        public IActionResult SimonSays(SimonSays simon)
         {
             // feed id through db.
-            SimonSays simon = new SimonSays();
             return View(simon);
+        }
+
+        [HttpGet]
+        public IActionResult SimonBeginPlay(SimonSays says)
+        {
+            says.sequenceCounter += 1;
+            return View(says);
         }
     }
 }

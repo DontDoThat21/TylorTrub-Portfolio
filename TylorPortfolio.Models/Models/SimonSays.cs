@@ -12,6 +12,7 @@ namespace TylorTrubPortfolio.Models
     {
         [Key]
         [DisplayName("Session Id")]
+        [DefaultValue(-1)]
         public int Id { get; set; }
 
         public string currentColor = "";
