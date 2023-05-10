@@ -9,13 +9,16 @@ using System.Threading.Tasks;
 namespace TylorTrubPortfolio.Models
 {
     public class SimonSays
-    {
+    {        
+        public SimonSays()
+        {
+        }
+
         [Key]
-        [DisplayName("Session Id")]        
+        [DisplayName("Session Id")]
         public int Id { get; set; }
 
         public string currentColor = "";
-
         public int sequenceCounter { get; set; }
     }
 }

@@ -22,8 +22,21 @@
                 <button class="btn-simon btn-simon-orange" id="2" style="opacity: 0.3;"></button>
                 <button class="btn-simon btn-simon-cyan" id="3" style="opacity: 0.3;"></button>
                 <div id="circ" style="position: absolute; margin: 30% 30%; border-radius: 50%; border: 3px solid #111; width: 38%;   height: 38%; background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, #777777 80%), #004; color: #fff; box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.5);">
-                    <a asp-controller="Games" asp-action="SimonBeginPlay" name="SimonBeginPlay" value="@(Model.sequenceCounter != 0 ? Model.sequenceCounter : "Play")">
-                        workl  uwutyfduwag
+                    @if (Model.sequenceCounter == -1)
+                    {
+                        TempData["test"] = (int)TempData["test"] + 1;
+                        Model.sequenceCounter = 0;
+                    }
+                    else
+                    {
+                        TempData["test"] = (int)TempData["test"] + 1;
+                        Model.sequenceCounter++;
+                    }
+
+                    <a asp-controller="Games" asp-action="SimonSays" name="SimonSays">
+                        @(Model.sequenceCounter != 0 ? Model.sequenceCounter : "Play")
+                        WORK
+                        @TempData["test"] IS ALEGEDLY 1
                     </a>
                 </div>
             </div>
