@@ -19,6 +19,5 @@ namespace TylorTrubPortfolio.Models
         public int Id { get; set; }
 
         public string currentColor = "";
-        public int sequenceCounter { get; set; }
     }
 }

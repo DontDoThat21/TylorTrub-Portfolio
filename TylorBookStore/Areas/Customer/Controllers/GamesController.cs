@@ -16,19 +16,8 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
             return View();
         }
 
-        public IActionResult SimonSays()
+        public IActionResult SimonSays(SimonSays says)
         {
-
-            //if (@Model.sequenceCounter == -1)
-            //{
-            //    // new game
-            //    simon.sequenceCounter++;
-            //}
-            //else
-            //{
-
-            //}
-
             if (TempData["test"] is null)
             {
                 TempData["test"] = 1;
@@ -38,12 +27,31 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
                 TempData["test"] = (int)TempData["test"] + 1;
             }
             TempData.Keep();
-            SimonSays simon = new SimonSays{
-                sequenceCounter = (int)TempData["test"]
+            List<SimonSays> simons = new List<SimonSays>()
+            {
+                new SimonSays { Id = 0, currentColor =  "green" },
+                new SimonSays { Id = 1, currentColor =  "red" },
+                new SimonSays { Id = 2, currentColor =  "orange" },
+                new SimonSays { Id = 3, currentColor =  "cyan" }
             };
 
             // feed id through db.
-            return View(simon);
+            return View(simons);
+        }
+
+        [HttpPost]
+        public IActionResult SimonSaysPOST(SimonSays says)
+        {
+            List<SimonSays> simons = new List<SimonSays>()
+            {
+                new SimonSays { Id = 0, currentColor =  "green" },
+                new SimonSays { Id = 1, currentColor =  "red" },
+                new SimonSays { Id = 2, currentColor =  "orange" },
+                new SimonSays { Id = 3, currentColor =  "cyan" }
+            };
+
+            // feed id through db.
+            return View(simons);
         }
 
         //[HttpGet]
