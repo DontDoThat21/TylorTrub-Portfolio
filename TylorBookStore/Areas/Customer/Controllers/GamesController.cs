@@ -37,7 +37,7 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
             {
                 TempData["test"] = (int)TempData["test"] + 1;
             }
-
+            TempData.Keep();
             SimonSays simon = new SimonSays{
                 sequenceCounter = (int)TempData["test"]
             };
