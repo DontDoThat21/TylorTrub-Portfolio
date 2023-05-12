@@ -39,21 +39,7 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
             return View(simons);
         }
 
-        [HttpPost]
-        public IActionResult SimonSaysPOST(SimonSays says)
-        {
-            List<SimonSays> simons = new List<SimonSays>()
-            {
-                new SimonSays { Id = 0, currentColor =  "green" },
-                new SimonSays { Id = 1, currentColor =  "red" },
-                new SimonSays { Id = 2, currentColor =  "orange" },
-                new SimonSays { Id = 3, currentColor =  "cyan" }
-            };
-
-            // feed id through db.
-            return View(simons);
-        }
-
+        
         //[HttpGet]
         //public IActionResult SimonBeginPlay(SimonSays says)
         //{
@@ -63,3 +49,4 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
         //}
     }
 }
+ 
