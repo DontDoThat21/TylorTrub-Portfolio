@@ -1,18 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TylorTrubPortfolio.Models;
 using TylorTrubPortfolio.Models;
+using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.DataAccess.Data
 {
-    public class BookStoreDBContext : DbContext
+    public class PortfolioDBContext : DbContext
     {
-        public BookStoreDBContext(DbContextOptions<BookStoreDBContext> options) : base(options) 
+        public PortfolioDBContext(DbContextOptions<PortfolioDBContext> options) : base(options) 
         {
 
         }
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Motorcycle> Motorcycles { get; set; }
+        public DbSet<MotorcycleVideo> MotorcycleVideos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -106,6 +109,60 @@ namespace TylorTrubPortfolio.DataAccess.Data
                     CategoryId = 2,
                     ImageUrl = ""
                 });
+
+            modelBuilder.Entity<MotorcycleVideo>().HasData(
+                new MotorcycleVideo { Id = 1, VideoUrl = "https://drive.google.com/file/d/12D9eX-sjUJpMIvm1I8EOrcaQVuusSnly/preview" });
+            modelBuilder.Entity<MotorcycleVideo>().HasData(
+                new MotorcycleVideo { Id = 2, VideoUrl = "https://drive.google.com/file/d/1BS-22PZ8CDcDwrdYnYJ6vXbQ3j4_UQD9/preview" });
+            modelBuilder.Entity<MotorcycleVideo>().HasData(
+                new MotorcycleVideo { Id = 3, VideoUrl = "https://drive.google.com/file/d/1Zu6tYhZ8rPyWbW-3zoFWW4yCCZ_Wqbj1/preview" });
+            //modelBuilder.Entity<PortfolioImage>().HasData(
+            //    new MotorcycleVideo { Id = 3, VideoUrl = "https://drive.google.com/file/d/1Zu6tYhZ8rPyWbW-3zoFWW4yCCZ_Wqbj1/preview" });
+
+            modelBuilder.Entity<Motorcycle>().HasData(
+                new Motorcycle
+                {
+                    Id = 1,
+                    MotorcycleName = "Yamaha MT-10",
+                    MotorcycleCc = 998,
+                    Manufacturer = "Yamaha",
+                    Hp = "0",
+                    Year = 19,
+                    EngineStyle = "Four Stroke V4",
+                    Torque = "110.8ft",
+                    Brakes = "Brembo",
+                    Picture = "yamahamt10.jpg",
+                    AddDate = DateTime.Now
+                },
+                new Motorcycle
+                {
+                    Id = 2,
+                    MotorcycleName = "Kawasaki H2-R",
+                    MotorcycleCc = 998,
+                    Manufacturer = "Kawasaki",
+                    Hp = "0",
+                    Year = 23,
+                    EngineStyle = "Four Stroke Supercharged",
+                    Torque = "115ft",
+                    Brakes = "Brembo",
+                    Picture = "kawasakih2r.png",
+                    AddDate = DateTime.Now
+                },
+                new Motorcycle
+                {
+                    Id = 3,
+                    MotorcycleName = "BMW R1100RS",
+                    MotorcycleCc = 1085,
+                    Manufacturer = "BMW",
+                    Hp = "0",
+                    Year = 02,
+                    EngineStyle = "4-Stroke Twin Boxer",
+                    Torque = "92.9ft",
+                    Brakes = "1-Disc-Rear, 2-Front",
+                    Picture = "bmwk1100caferacer.jpg",
+                    AddDate = DateTime.Now
+                });
+
         }
 
     }

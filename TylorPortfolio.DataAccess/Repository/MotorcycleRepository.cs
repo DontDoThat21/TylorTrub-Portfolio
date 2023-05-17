@@ -11,9 +11,9 @@ namespace TylorTrubPortfolio.DataAccess.Repository
 {
     public class MotorcycleRepository : Repository<Motorcycle>, IMotorcycleRepository
     {
-        private MotorcycleDBContext _db;
+        private PortfolioDBContext _db;
 
-        public MotorcycleRepository(MotorcycleDBContext db) : base(db)
+        public MotorcycleRepository(PortfolioDBContext db) : base(db)
         {
             _db = db;
         }

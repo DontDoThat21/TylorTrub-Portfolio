@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using TylorTrubPortfolio.DataAccess.Data;
@@ -10,18 +9,18 @@ using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.DataAccess.Repository
 {
-    public class CategoryRepository : Repository<Category>, ICategoryRepository
+    public class MotorcycleVideosRepository : Repository<MotorcycleVideo>, IMotorcycleVideosRepository
     {
         private PortfolioDBContext _db;
 
-        public CategoryRepository(PortfolioDBContext db) : base(db)
+        public MotorcycleVideosRepository(PortfolioDBContext db) : base(db)
         {
             _db = db;
         }
 
-        public void Update(Category obj)
+        public void Update(MotorcycleVideo obj)
         {
-            _db.Categories.Update(obj);
+            _db.MotorcycleVideos.Update(obj);
         }
     }
 }

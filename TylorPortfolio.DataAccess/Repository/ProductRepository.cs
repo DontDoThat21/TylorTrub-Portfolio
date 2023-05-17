@@ -11,8 +11,8 @@ namespace TylorTrubPortfolio.DataAccess.Repository
 {
     public class ProductRepository : Repository<Product>, IProductRepository
     {
-        private BookStoreDBContext _db;
-        public ProductRepository(BookStoreDBContext db) : base(db)
+        private PortfolioDBContext _db;
+        public ProductRepository(PortfolioDBContext db) : base(db)
         {
             _db = db;
         }

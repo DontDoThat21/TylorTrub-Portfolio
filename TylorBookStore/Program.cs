@@ -16,7 +16,7 @@ builder.Services.AddDbContext<PortfolioDBContext>(options =>
 //builder.Services.AddDbContext<MotorcycleDBContext>(options => 
 //    options.UseSqlServer(builder.Configuration.GetConnectionString("MotorcycleConnection")));
 
-builder.Services.AddScoped<IUnitOfWork, UnitOfWorkBookstore>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 

@@ -12,9 +12,8 @@ namespace TylorTrubPortfolio.DataAccess.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly BookStoreDBContext _bookStoreDBContext;
+        private readonly PortfolioDBContext _portfolioDBContext;
         internal DbSet<T> dbSet;
-        private readonly MotorcycleDBContext _motorcycleDBContext;
 
         /// <summary>
         /// The motorcycle and bookstore DBs are seperated intentionally.
@@ -25,23 +24,9 @@ namespace TylorTrubPortfolio.DataAccess.Repository
         /// <param name="motorcycle">Motorcycle store, information, and CDN DB.</param>        
         public Repository(DbContext db)
         {
-            try
-            {
-                _bookStoreDBContext = (BookStoreDBContext?)db;
-                this.dbSet = _bookStoreDBContext.Set<T>();
-                _bookStoreDBContext.Products.Include(u => u.Category).Include(u => u.CategoryId);
-            }
-            catch (Exception)
-            {
-            }
-            try
-            {
-                _motorcycleDBContext = (MotorcycleDBContext?)db;
-                this.dbSet = _motorcycleDBContext.Set<T>();
-            }
-            catch (Exception)
-            {
-            }
+            _portfolioDBContext = (PortfolioDBContext?)db;
+            this.dbSet = _portfolioDBContext.Set<T>();
+            _portfolioDBContext.Products.Include(u => u.Category).Include(u => u.CategoryId);
         }
 
         public void Add(T entity)
