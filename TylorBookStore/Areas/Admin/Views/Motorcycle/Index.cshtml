@@ -1,14 +1,16 @@
 ﻿@model List<Motorcycle>
-
-<h1>
-    Welcome to the Motorcycle section of my developer portfolio!
-</h1>
-<a asp-controller="Motorcycle" asp-action="Collection" class="btn btn-primary">
-    <i class="bi bi-box2-heart"></i> Visit my Motorcycle Collection and footage
-</a>
-<br />
-<br />
-<br />
-<a asp-controller="Motorcycle" asp-action="Store" class="btn btn-primary">
-    <i class="bi bi-shop-window"></i> Visit Motorcycle Store
-</a>
+<div class="container text-center">
+    <h1>
+        Welcome to the Motorcycle section of my portfolio!
+    </h1>
+    <br />
+    <a asp-controller="Motorcycle" asp-action="Collection" class="btn btn-primary text-center align-items-center p-4" style="height:70px; width:33%">
+        <i class="bi bi-box2-heart"></i> Visit my Motorcycle Collection and footage
+    </a>
+    <br />
+    <br />
+    <br />
+    <a asp-controller="Motorcycle" asp-action="Store" class="btn btn-primary text-center align-items-center p-4" style="height:70px; width:33%">
+        <i class="bi bi-shop-window"></i> Visit Motorcycle Store
+    </a>
+</div>

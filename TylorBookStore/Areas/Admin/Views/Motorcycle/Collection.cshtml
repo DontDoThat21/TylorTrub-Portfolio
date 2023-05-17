@@ -1,2 +1,38 @@
-﻿<h2>test</h2>
-<p>This should be a video carousel, with local or G-Drive incorporation, and maybe a link from the index portfolio trails here.</p>
+﻿@{
+    string videoPath = "/videos/motorcycle/";
+    string picturePath = "/Images/home/motorcycle/";
+}
+
+<div id="video-player" class="embed-responsive embed-responsive-16by9 text-center">
+    <h2>Motorcycling Videos</h2>
+
+    <div class="d-flex justify-content-center border-0">
+        <video src="@(videoPath)vet.mp4" style="border-radius: 10px;" controls></video>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <button class="btn btn-primary container-fluid">
+                LEFT
+            </button>
+        </div>
+        <div class="col-4 p-2">
+            TITLE - Video
+        </div>
+        <div class="col-4">
+            <button class="btn btn-primary container-fluid">
+                RIGHT
+            </button>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div class="row d-flex text-center justify-content-center border-0">
+    <h2>Motorcycling pictures</h2>
+
+    <img class="col-4 rounded" src="@(picturePath)homebike1.jpg" />
+    <img class="col-4 rounded" src="@(picturePath)homebikedetroit1.jpg" />
+    <img class="col-4 rounded" src="@(picturePath)homebikejoslyn1.jpg" />
+
+</div>
