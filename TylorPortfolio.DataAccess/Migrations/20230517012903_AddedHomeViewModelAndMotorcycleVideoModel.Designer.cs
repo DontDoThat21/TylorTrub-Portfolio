@@ -11,8 +11,8 @@ using TylorTrubPortfolio.DataAccess.Data;
 namespace TylorTrubPortfolio.DataAccess.Migrations
 {
     [DbContext(typeof(PortfolioDBContext))]
-    [Migration("20230507225149_AddImageUrlToProduct")]
-    partial class AddImageUrlToProduct
+    [Migration("20230517012903_AddedHomeViewModelAndMotorcycleVideoModel")]
+    partial class AddedHomeViewModelAndMotorcycleVideoModel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -9,8 +9,8 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
     public class MotorcycleController : Controller
     {
 
-        private readonly IUnitOfWorkMotorcycle _motorcycles;
-        public MotorcycleController(IUnitOfWorkMotorcycle unitOfWork)
+        private readonly IUnitOfWork _motorcycles;
+        public MotorcycleController(IUnitOfWork unitOfWork)
         {
             _motorcycles = unitOfWork;
         }

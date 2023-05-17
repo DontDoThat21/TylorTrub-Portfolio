@@ -10,7 +10,7 @@ using TylorTrubPortfolio.DataAccess.Data;
 
 namespace TylorTrubPortfolio.DataAccess.Migrations
 {
-    [DbContext(typeof(BookStoreDBContext))]
+    [DbContext(typeof(PortfolioDBContext))]
     [Migration("20230507224833_AddCatToDbAndSeed")]
     partial class AddCatToDbAndSeed
     {

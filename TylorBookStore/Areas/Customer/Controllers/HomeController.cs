@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 using TylorTrubPortfolio.Models;
+using TylorTrubPortfolio.Models.ViewModels;
 
 namespace TylorTrubPortfolio.Areas.Customer.Controllers
 {
@@ -9,28 +10,33 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IUnitOfWorkBookstore _unitOfWorkBookstore;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public HomeController(ILogger<HomeController> logger, IUnitOfWorkBookstore unitOfWorkBookstore)
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
         {
             _logger = logger;
-            _unitOfWorkBookstore = unitOfWorkBookstore;
+            _unitOfWork = unitOfWork;
         }
 
         public IActionResult Index()
         {
-            return View();
+            HomeViewModel homeModel = new HomeViewModel()
+            {
+                motorcycleVideoList = _unitOfWork.MotorcycleVideos.GetAll().ToList()
+            };
+            // lookup viewmodels.
+            return View(homeModel);
         }
 
         public IActionResult MVCDemo()
         {
-            IEnumerable<Product> productList = _unitOfWorkBookstore.Product.GetAll(includeProperties: "Category");
+            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
             return View(productList);
         }
 
         public IActionResult Details(int id)
         {
-            Product product = _unitOfWorkBookstore.Product.Get(u=>u.Id==id, includeProperties: "Category");
+            Product product = _unitOfWork.Product.Get(u=>u.Id==id, includeProperties: "Category");
             return View(product);
         }
 

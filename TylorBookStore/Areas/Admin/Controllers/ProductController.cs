@@ -11,9 +11,9 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
     [Area("Admin")]
     public class ProductController : Controller
     {
-        private readonly IUnitOfWorkBookstore _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public ProductController(IUnitOfWorkBookstore db, IWebHostEnvironment webHostEnvironment)
+        public ProductController(IUnitOfWork db, IWebHostEnvironment webHostEnvironment)
         {
             _unitOfWork = db;
             _webHostEnvironment = webHostEnvironment;

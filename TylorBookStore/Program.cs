@@ -10,14 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<BookStoreDBContext>(options => 
+builder.Services.AddDbContext<PortfolioDBContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDbContext<MotorcycleDBContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MotorcycleConnection")));
+//builder.Services.AddDbContext<MotorcycleDBContext>(options => 
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("MotorcycleConnection")));
 
-builder.Services.AddScoped<IUnitOfWorkBookstore, UnitOfWorkBookstore>();
-builder.Services.AddScoped<IUnitOfWorkMotorcycle, UnitOfWorkMotorcycle>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWorkBookstore>();
 
 var app = builder.Build();
 
