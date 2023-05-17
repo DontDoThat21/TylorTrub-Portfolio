@@ -1,12 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TylorTrubPortfolio.Models;
-using TylorTrubPortfolio.Models;
+using TylorTrubPortfolio.DataAccess.Helpers;
 using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.DataAccess.Data
 {
     public class PortfolioDBContext : DbContext
     {
+
+
+
         public PortfolioDBContext(DbContextOptions<PortfolioDBContext> options) : base(options) 
         {
 
@@ -16,6 +18,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Motorcycle> Motorcycles { get; set; }
         public DbSet<MotorcycleVideo> MotorcycleVideos { get; set; }
+        public DbSet<PortfolioImage> PortfolioImages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -116,8 +119,6 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 new MotorcycleVideo { Id = 2, VideoUrl = "https://drive.google.com/file/d/1BS-22PZ8CDcDwrdYnYJ6vXbQ3j4_UQD9/preview" });
             modelBuilder.Entity<MotorcycleVideo>().HasData(
                 new MotorcycleVideo { Id = 3, VideoUrl = "https://drive.google.com/file/d/1Zu6tYhZ8rPyWbW-3zoFWW4yCCZ_Wqbj1/preview" });
-            //modelBuilder.Entity<PortfolioImage>().HasData(
-            //    new MotorcycleVideo { Id = 3, VideoUrl = "https://drive.google.com/file/d/1Zu6tYhZ8rPyWbW-3zoFWW4yCCZ_Wqbj1/preview" });
 
             modelBuilder.Entity<Motorcycle>().HasData(
                 new Motorcycle
@@ -162,6 +163,15 @@ namespace TylorTrubPortfolio.DataAccess.Data
                     Picture = "bmwk1100caferacer.jpg",
                     AddDate = DateTime.Now
                 });
+            
+            modelBuilder.Entity<PortfolioImage>().HasData(
+                new PortfolioImage { Id = 1, Name = "Home 1", Image = PorfolioImageHelper.GetImageBytesFromResources("home1.jpg") });
+            
+            modelBuilder.Entity<PortfolioImage>().HasData(
+                new PortfolioImage { Id = 2, Name = "Home 2", Image = PorfolioImageHelper.GetImageBytesFromResources("home2.jpg") });
+            
+            modelBuilder.Entity<PortfolioImage>().HasData(
+                new PortfolioImage { Id = 3, Name = "Home 3", Image = PorfolioImageHelper.GetImageBytesFromResources("home3.jpg") });
 
         }
 

@@ -10,7 +10,7 @@ namespace TylorTrubPortfolio.Models.ViewModels
     public class HomeViewModel
     {
         public List<MotorcycleVideo> motorcycleVideoList { get; set; }
-
+        public List<PortfolioImage> portfolioImages { get; set; }
 
     }
 }
