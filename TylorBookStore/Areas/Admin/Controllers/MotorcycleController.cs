@@ -125,5 +125,11 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             List<Motorcycle> motorcycles = _unitOfWork.Motorcycle.GetAll().ToList();
             return View(motorcycles);
         }
+
+        public IActionResult GetAll()
+        {
+            List<Motorcycle> objMotorcycleList = _unitOfWork.Motorcycle.GetAll().ToList();
+            return Json(new { data = objMotorcycleList });
+        }
     }
 }

@@ -31,4 +31,11 @@
     <Folder Include="wwwroot\Images\product\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\js\motorcycle.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
