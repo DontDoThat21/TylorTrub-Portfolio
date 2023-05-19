@@ -2,6 +2,7 @@
 using TylorTrubPortfolio.DataAccess.Data;
 using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 using TylorTrubPortfolio.Models;
+using TylorTrubPortfolio.Models.ViewModels;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers
 {
@@ -9,10 +10,10 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
     public class MotorcycleController : Controller
     {
 
-        private readonly IUnitOfWork _motorcycles;
+        private readonly IUnitOfWork _unitOfWork;
         public MotorcycleController(IUnitOfWork unitOfWork)
         {
-            _motorcycles = unitOfWork;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: MotorcycleController
@@ -40,7 +41,7 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Motorcycle? motorFromDB = _motorcycles.Motorcycle.Get(u => u.Id == id, "");
+            Motorcycle? motorFromDB = _unitOfWork.Motorcycle.Get(u => u.Id == id, "");
             if (motorFromDB == null)
             {
                 return NotFound();
@@ -113,11 +114,15 @@ namespace TylorTrubPortfolio.Areas.Admin.Controllers
 
         public IActionResult Collection()
         {
-            return View();
+            HomeViewModel homeViewModel = new HomeViewModel()
+            {
+                MotorcycleVideoList = _unitOfWork.MotorcycleVideos.GetAll().ToList()
+            };
+            return View(homeViewModel);
         }
         public IActionResult Store()
         {
-            List<Motorcycle> motorcycles = _motorcycles.Motorcycle.GetAll().ToList();
+            List<Motorcycle> motorcycles = _unitOfWork.Motorcycle.GetAll().ToList();
             return View(motorcycles);
         }
     }

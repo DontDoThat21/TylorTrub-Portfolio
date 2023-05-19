@@ -1,9 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    string homeImagesIndex = "";
 }
-
-@model HomeViewModel
 
 <div class="container text-center">
     <h3 class="display-4">Hello, my name is Tylor Trub.</h3>
@@ -149,10 +146,3 @@
         </div>
     </div>
 </div>
-
-
-@for (int i = 0; i < Model.motorcycleVideoList.Count; i++)
-{
-    <h2>Custom video number: @i</h2>
-    <iframe src="@Model.motorcycleVideoList[i].VideoUrl" width="1600" height="900" frameborder="0" allowfullscreen></iframe>
-}
