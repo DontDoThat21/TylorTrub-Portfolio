@@ -1,4 +1,8 @@
-﻿@model IEnumerable<Product>
+﻿@{
+    ViewData["Title"] = "Bookstore home";
+}
+
+@model IEnumerable<Product>
 
 <div class="row pb-3">
     @foreach (var product in Model)
