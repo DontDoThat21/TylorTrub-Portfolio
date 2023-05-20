@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Motorcycle Store";
+    string picturePath = "/Images/home/motorcycle/";
 }
 
 @model List<Motorcycle>
@@ -12,46 +13,17 @@
 <div class="container">
     <h1>Motorcycle Store - New and used Bikes</h1>
 
-    <table class="table table-bordered table-striped table-dark">
-        <tr>
-            <th>
-                Motorcycle
-            </th>
-            <th>
-                Manufacturer
-            </th>
-            <th>
-                Engine CCs
-            </th>
-            <th>
-                Image
-            </th>
-            <th>
-                Year
-            </th>
-            <th>
-                BUY
-            </th>
-        </tr>
-        <tbody>
-            @foreach (var motor in Model)
-            {
-                <tr>
-                    <td>@motor.MotorcycleName</td>
-                    <td>@motor.Manufacturer</td>
-                    <td>@motor.MotorcycleCc</td>
-                    <td>
-                        <img src="~/Images/motorcycle/@motor.Picture" width="356px" height="200px" class="border-0 rounded">                        
-                    </td>
-                    <td>@motor.Year</td>
-                    <td>
-                        <a asp-controller="Motorcycle" asp-action="Details" asp-route-id="@motor.Id" class="m-4 p-6 p btn btn-primary mx-auto w-100">
-                            <i class="bi bi-cart-plus"></i> BUY
-                        </a>
-                    </td>
-                </tr>
-            }
-        </tbody>
+    <table id="tblData" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Motorcycle</th>
+                <th>Manufacturer</th>
+                <th>Engine CCs</th>
+                <th>Image</th>
+                <th>Year</th>
+                <th></th>
+            </tr>
+        </thead>        
     </table>
 </div>
 
