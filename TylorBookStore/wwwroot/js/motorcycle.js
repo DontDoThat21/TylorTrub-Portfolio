@@ -8,16 +8,21 @@ function loadDataTable() {
     dataTable = $('#tblData').DataTable({
         "ajax": { url: '/admin/motorcycle/getall' },
         "columns": [
-            { data: 'Motorcycle', "width": "10%" },
-            { data: 'Manufacturer', "width": "15%" },
-            { data: 'Engine CCs', "width": "10%" },
-            { data: 'Image', "width": "30%" },
-            { data: 'Year', "width": "10%" },
+            { data: 'motorcycleName', "width": "10%" },
+            { data: 'manufacturer', "width": "15%" },
+            { data: 'motorcycleCc', "width": "10%" },
+            {
+                data: 'picture', "width": "30%",
+                "render": function (data) {
+                    return `<img src="../../Images/Home/Motorcycle/${data}" width="356px" height="200px" class="border-0 rounded">`;
+                }                
+            },
+            { data: 'year', "width": "10%" },
             {
                 data: 'id',
                 "render": function (data) {
                     return `<div class="w-75 btn-group" role="group">
-                     <a href="/admin/motorcycle/details?id=${data}" class="btn btn-primary mx-2"> <i class="bi bi-pencil-square"></i> Edit</a>               
+                     <a href="/admin/motorcycle/details?id=${data}" class="btn btn-primary mx-2"> <i class="bi bi-pencil-square"></i> Buy</a>               
                     </div>`
                 },
                 "width": "25%"
