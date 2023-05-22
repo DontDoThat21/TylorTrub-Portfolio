@@ -9,7 +9,7 @@ using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.DataAccess.Repository
 {
-    public class PortfolioImageRepository : Repository<PortfolioImage>, IPortfolioImageRepository
+    public class PortfolioImageRepository : Repository<PortfolioImage>, IPortfolioImagesRepository
     {
         private PortfolioDBContext _db;
 

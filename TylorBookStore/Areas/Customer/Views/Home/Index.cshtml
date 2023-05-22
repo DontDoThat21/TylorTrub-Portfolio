@@ -2,6 +2,9 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model HomeViewModel
+
+
 <div class="container text-center">
     <h3 class="display-4">Hello, my name is Tylor Trub.</h3>
     <p>I am a full-stack developer, with a C#.NET back-end focus.</p>
@@ -9,140 +12,56 @@
     <p>I host the majority of my code on <a href="https://github.com/DontDoThat21">GitHub</a>.</p>
     <p>Feel free to relax and play some <a asp-controller="Games" asp-action="Index">HTML5/CSS3 games</a> I've created.</p>
     <p>Available 8am EST to 5pm EST. <a href="mailto:tylortrub@gmail.com">tylortrub@gmail.com</a></p>
-</div>
 
-<h2 class="text-center">
-    <a asp-controller="Home" asp-action="MVCDemo">
-        Check out my latest MVC .NET 8 project!
-    </a>
-</h2>
-
-<div class="container">
-    <div class="row">
-        <div class="col" style="border: 1px solid red;">
-            Motorcycling is a big hobby of mine. As you scroll down,
-            you will see more of my travels,
-            what I like to do for fun,
-            and core pieces of me.
-            <img src="~/Images/home/motorcycle/homebike3.jpg" width="300px" height="400px" class="border-0 rounded">
-            <p>todo: make image line to next resource</p>
-
-        </div>
-        <div class="col" style="border: 1px solid red;">
-            test
-        </div>
-        <div class="col" style="border: 1px solid red;">
-            test
-        </div>
-    </div>
+    <h2 class="text-center">
+        <a asp-controller="Home" asp-action="MVCDemo">
+            Check out my latest MVC .NET 8 project!
+        </a>
+    </h2>
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col" style="border: 1px solid red;">
-            test
-        </div>
-        <div class="col" style="border: 1px solid red;">
-            test
-        </div>
-        <div class="col" style="border: 1px solid red;">
-            I picked up motorcycling as an exciting hobby as a teenager,
-            traveling around the states in my evenings and weekends!
-            <img src="~/Images/home/homehelmetinworklol1.jpg" width="300px" height="400px" class="border-0 rounded">
-            <p>todo: make image line to next resource</p>
-        </div>
-    </div>
-</div>
+    @for (int i = 0; i < Model.PortfolioImageList.Count; i++)
+    {
+        if (i % 2 == 0 || i == 0)
+        {
+            // draw top row only and give image to top left col
+            <div class="row">
+                <div class="col-4" style="border: 1px solid red;">
+                    @Model.PortfolioImageList[i].DisplayText
+                    <img src="~/Images/home/@Model.PortfolioImageList[i].FileName" class="img-fluid border-0 rounded">
 
-<div class="container">
-    <div class="row">
-        <div class="col-6" style="border: 1px solid red;">
-            I have experience directing the software processes behind automotive large shows, 
-            as well as first hand physical layer support for internal users of intranet applications.
-            <img src="~/Images/home/homemiwork1.jpg" width="400px" height="300px" class="border-0 rounded">
-            <p>todo: make image line to next resource</p>
-        </div>
-        <div class="col-3" style="border: 1px solid red;">
-            test
-        </div>
-        <div class="col-3" style="border: 1px solid red;">
-            test
-        </div>
-    </div>
-</div>
+                </div>
+                <div class="row"></div>
+                <div class="col-8" style="border: 1px solid blue;">
+                    <img src="~/Images/home/lineTopLeftBottomRightWavy.png" class="img-fluid border-0 rounded">
 
-<div class="container">
-    <div class="row">
-        <div class="col" style="border: 1px solid red;">
-            test
-        </div>
-        <div class="col" style="border: 1px solid red;">
-            test
-        </div>
-        <div class="col" style="border: 1px solid red;">
-            <div style="border: 1px solid red;">
-                I have managed and upgraded software systems in Los Angeles, Tennesee, and Detroit.
-                Warehousing software ranges from the initial definition of what is included in a show, to the
-                logistical transportation of goods to the show itself all through intranet software.
-                <br />
-                <img src="~/Images/home/home1.jpg" width="400px" height="300px" class="border-0 rounded">
-                <p>todo: make image line to next resource</p>
+                </div>
+                <div class="col-4" style="border: 1px solid blue;">
+                </div>
             </div>
-        </div>
-    </div>
+        }
+        else // odd
+        {
+            <div class="row">
+                <div class="col-4" style="border: 1px solid blue;">
+                </div>
+                <div class="col-4" style="border: 1px solid blue;">
+
+                </div>
+                <div class="col-4" style="border: 1px solid red;">
+                    @Model.PortfolioImageList[i].DisplayText
+                    <img src="~/Images/home/@Model.PortfolioImageList[i].FileName" class="img-fluid border-0 rounded">
+                </div>
+                <div class="row"></div>
+                <div class="col-4"></div>
+                <div class="col-8" style="border: 1px solid blue;">
+                    <img src="~/Images/home/lineTopRightBottomLeftWavy.png" class="img-fluid border-0 rounded">
+
+                </div>
+            </div>
+        }
+    } 
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col" style="border: 1px solid red;">
-            test
-        </div>
-        <div class="col" style="border: 1px solid red;">
-            test
-        </div>
-        <div class="col" style="border: 1px solid red;">
-            <div style="border: 1px solid red;">
-                I grew up in Royal Oak Michigan. I decided at a young age that I loved technology sciences. 
-                Before I was a teenager, I was an avid gamer and still am to this day.
-                <br />
-                <img src="~/Images/home/home1.jpg" width="400px" height="300px" class="border-0 rounded">
-                <p>todo: make image line to next resource</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col" style="border: 1px solid red;">
-            test
-        </div>
-        <div class="col" style="border: 1px solid red;">
-            test
-        </div>
-        <div class="col" style="border: 1px solid red;">
-            <div style="border: 1px solid red;">
-                I grew up in Royal Oak Michigan. I decided at a young age that I loved technology sciences.
-                Before I was a teenager, I was an avid gamer and still am to this day.
-                <img src="~/Images/home/home1.jpg" width="400px" height="300px" class="border-0 rounded">
-                <p>todo: make image line to next resource</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col" style="border: 1px solid red;">
-            test
-        </div>
-        <div class="col" style="border: 1px solid red;">
-            test
-        </div>
-        <div class="col" style="border: 1px solid red;">
-            <div style="border: 1px solid red;">
-                test
-            </div>
-        </div>
-    </div>
-</div>
+THE END

@@ -22,7 +22,8 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
         {
             HomeViewModel homeModel = new HomeViewModel()
             {
-                MotorcycleVideoList = _unitOfWork.MotorcycleVideos.GetAll().ToList()
+                MotorcycleVideoList = _unitOfWork.MotorcycleVideos.GetAll().ToList(),
+                PortfolioImageList = _unitOfWork.PortfolioImages.GetAll().ToList()
             };
             return View(homeModel);
         }

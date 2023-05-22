@@ -12,6 +12,7 @@ namespace TylorTrubPortfolio.DataAccess.Repository.IRepository
         IProductRepository Product { get; }
         IMotorcycleRepository Motorcycle { get; }
         IMotorcycleVideosRepository MotorcycleVideos { get; }
+        IPortfolioImagesRepository PortfolioImages { get; }
 
         void Save();
 
