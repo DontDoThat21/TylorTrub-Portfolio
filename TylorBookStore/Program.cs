@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using TylorTrubPortfolio.DataAccess.Data;
 using TylorTrubPortfolio.DataAccess.Repository;
 using TylorTrubPortfolio.DataAccess.Repository.IRepository;
+using Microsoft.AspNetCore.Identity;
 
 // ignore
 
@@ -12,6 +13,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<PortfolioDBContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<PortfolioDBContext>();
 
 //builder.Services.AddDbContext<MotorcycleDBContext>(options => 
 //    options.UseSqlServer(builder.Configuration.GetConnectionString("MotorcycleConnection")));
@@ -32,7 +35,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
