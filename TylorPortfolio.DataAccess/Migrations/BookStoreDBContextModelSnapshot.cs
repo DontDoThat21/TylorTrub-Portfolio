@@ -17,10 +17,221 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0-preview.3.23174.2")
+                .HasAnnotation("ProductVersion", "8.0.0-preview.4.23259.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(21)
+                        .HasColumnType("nvarchar(21)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
 
             modelBuilder.Entity("TylorTrubPortfolio.Models.Category", b =>
                 {
@@ -111,7 +322,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            AddDate = new DateTime(2023, 5, 22, 12, 19, 10, 925, DateTimeKind.Local).AddTicks(9463),
+                            AddDate = new DateTime(2023, 5, 22, 21, 44, 14, 608, DateTimeKind.Local).AddTicks(9268),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke V4",
                             Hp = "0",
@@ -125,7 +336,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            AddDate = new DateTime(2023, 5, 22, 12, 19, 10, 925, DateTimeKind.Local).AddTicks(9510),
+                            AddDate = new DateTime(2023, 5, 22, 21, 44, 14, 608, DateTimeKind.Local).AddTicks(9321),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke Supercharged",
                             Hp = "0",
@@ -139,7 +350,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            AddDate = new DateTime(2023, 5, 22, 12, 19, 10, 925, DateTimeKind.Local).AddTicks(9513),
+                            AddDate = new DateTime(2023, 5, 22, 21, 44, 14, 608, DateTimeKind.Local).AddTicks(9325),
                             Brakes = "1-Disc-Rear, 2-Front",
                             EngineStyle = "4-Stroke Twin Boxer",
                             Hp = "0",
@@ -263,7 +474,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 8,
-                            DisplayText = "Traveling to California is always fun even for work; upgrading older Windows machines and downloadingsoftware to run the warehouse is an interesting task.",
+                            DisplayText = "Traveling to California is always fun even for work; upgrading older Windows machines and downloading software to run the warehouse is an interesting task.",
                             FileName = "homecawork1.jpg",
                             Name = "CA Work Warehouse 1"
                         },
@@ -343,6 +554,83 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                             DisplayText = "StarCraft is my favorite game! It requires so much attention, and intense multi tasking proficiency. Something I consider myself skilled at, I love StarCraft even though some consider it too difficult to learn. Life is about mastering difficult things anyways!",
                             FileName = "homegamingsc1.jpg",
                             Name = "Gaming MI Cuddles SC2 1"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            DisplayText = "Nothing like winding down with a beverage and some Dark Souls III. Most challenging title I've every played with a controller by far! Dex builds know what's up!",
+                            FileName = "homebikegaming3.jpg",
+                            Name = "Gaming MI Dark Souls 1"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            DisplayText = "I used to take the scenic routes of Detroit after work, and just enjoy the sky. Nothing like the smell of the Earth's Petrichor into a pleasant ride around town. Sure makes wheelies scary though!",
+                            FileName = "homebikejoslyn1.jpg",
+                            Name = "Motorcycling MI Joslyn 1"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            DisplayText = "I used to take the scenic routes of Detroit after work, and just enjoy the sky. Nothing like the smell of the Earth's Petrichor into a pleasant ride around town. Sure makes wheelies scary though!",
+                            FileName = "homebikejoslyn1.jpg",
+                            Name = "Motorcycling MI Joslyn 1"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            DisplayText = "Motorcycling with pals, and Baby Yoda sponsored FOX hoodies? Sign me up! I miss this hoodie and wish I could find a replacement. So many compliments with it!",
+                            FileName = "homebikeyoda1.jpg",
+                            Name = "Motorcycling MI Yoda 1"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            DisplayText = "I made custom Raspberry Pi projects come to life with HDMI inserts to feed off the current source, and thus illuminate the given corner/edge/vicinity with the same color, ambient style! Very neat project.",
+                            FileName = "homecomputerprojectpi1.jpg",
+                            Name = "Raspberry Pi MI Yoda 1"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            DisplayText = "I for one, enjoyed the experiences that COVID offered me. More room for motorcycles on the road; it was a great opportunity to improve my desktop, and enjoy working from home at the same time.",
+                            FileName = "homedesk1.jpg",
+                            Name = "Desk MI Signs 1"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            DisplayText = "The fam out here in NC is great! Nothing like spending time with those you love. From fishing, to driving to beautiful scenery, to concerts, we do it all!",
+                            FileName = "homegroupnc1.jpg",
+                            Name = "Home NC Group 1"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            DisplayText = "I really enjoy playing my guitar when I have time to do so. One day I am sure I'll have a nice guitar collection! *starts playing dear god by a7x*.",
+                            FileName = "homeguitarpontiac1.jpg",
+                            Name = "Desk MI Signs 1"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            DisplayText = "Michigan will probably always be 'home' to me; I was raised close to 9 mile and the streets here have definitely had a large influence on my life.",
+                            FileName = "homemichigan1.jpg",
+                            Name = "Home MI Sky 1"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            DisplayText = "I am a big fan of Bicycling! It's good exercise and I love to see new trails and new people who share the same hobby. Feels like you're part of a club or something sometimes..",
+                            FileName = "homemichiganbike1.jpg",
+                            Name = "Home MI Sky 1"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            DisplayText = "The beauty of Michigan is sometimes understated. You truly experience all seasons, and the spring and fall feels like free air conditioning outside! It's great.",
+                            FileName = "homemichiganboulevard1.jpg",
+                            Name = "Home MI Sky 1"
                         });
                 });
 
@@ -480,6 +768,79 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                             Price50 = 22.0,
                             Title = "Leaves and Wonders"
                         });
+                });
+
+            modelBuilder.Entity("TylorTrubPortfolio.Models.Models.ApplicationUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Name")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("State")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StreetAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("ApplicationUser");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("TylorTrubPortfolio.Models.Product", b =>

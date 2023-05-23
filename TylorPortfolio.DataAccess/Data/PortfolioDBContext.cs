@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Resources;
 using TylorTrubPortfolio.DataAccess.Helpers;
 using TylorTrubPortfolio.Models;
+using TylorTrubPortfolio.Models.Models;
 
 namespace TylorTrubPortfolio.DataAccess.Data
 {
@@ -21,6 +22,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
         public DbSet<Motorcycle> Motorcycles { get; set; }
         public DbSet<MotorcycleVideo> MotorcycleVideos { get; set; }
         public DbSet<PortfolioImage> PortfolioImageVideos { get; set; }
+        public DbSet<ApplicationUser> applicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
