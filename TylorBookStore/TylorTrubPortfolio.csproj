@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TylorPortfolio.DataAccess\TylorTrubPortfolio.DataAccess.csproj" />
+    <ProjectReference Include="..\TylorPortfolio.Utility\TylorTrubPortfolio.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>

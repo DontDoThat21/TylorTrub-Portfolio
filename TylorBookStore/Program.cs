@@ -3,6 +3,8 @@ using TylorTrubPortfolio.DataAccess.Data;
 using TylorTrubPortfolio.DataAccess.Repository;
 using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Identity;
+using TylorTrubPortfolio.Utility;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 // ignore
 
@@ -20,6 +22,7 @@ builder.Services.AddRazorPages();
 //    options.UseSqlServer(builder.Configuration.GetConnectionString("MotorcycleConnection")));
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IEmailSender, EmailSender>();
 
 var app = builder.Build();
 
