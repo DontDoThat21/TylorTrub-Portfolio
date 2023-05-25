@@ -40,23 +40,26 @@
                                     <a class="nav-link" asp-area="Admin" asp-controller="Motorcycle" asp-action="Store">Store</a>
                                 </li>
                             </ul>
-                        </li>                      
-                        <li class="nav-seperator">
-                            |
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Books
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">Book Categories</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" asp-area="Admin" asp-controller="Product" asp-action="Index">Products</a>
-                                </li>
-                            </ul>
-                        </li>
+                        @if(User.IsInRole(SD.Role_Admin))
+                        {
+                            <li class="nav-seperator">
+                                |
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Books
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">Book Categories</a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" asp-area="Admin" asp-controller="Product" asp-action="Index">Products</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
                         <li class="nav-seperator">
                             |
                         </li>

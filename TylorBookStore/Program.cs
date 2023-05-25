@@ -16,7 +16,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<PortfolioDBContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<PortfolioDBContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<PortfolioDBContext>().AddDefaultTokenProviders();
 builder.Services.AddRazorPages();
 //builder.Services.AddDbContext<MotorcycleDBContext>(options => 
 //    options.UseSqlServer(builder.Configuration.GetConnectionString("MotorcycleConnection")));
