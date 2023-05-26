@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33626.354
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorTrubPortfolio", "TylorBookStore\TylorTrubPortfolio.csproj", "{2CEDF8C4-F32A-4CA9-9217-1D825C084A04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorTrubPortfolio", "TylorPortfolio\TylorTrubPortfolio.csproj", "{2CEDF8C4-F32A-4CA9-9217-1D825C084A04}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorTrubPortfolio.DataAccess", "TylorPortfolio.DataAccess\TylorTrubPortfolio.DataAccess.csproj", "{DC1022D8-C23A-4C0F-B82F-4D649B7D179C}"
 EndProject
