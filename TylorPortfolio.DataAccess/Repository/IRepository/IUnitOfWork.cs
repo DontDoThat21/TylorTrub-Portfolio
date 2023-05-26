@@ -11,6 +11,8 @@ namespace TylorTrubPortfolio.DataAccess.Repository.IRepository
         ICategoryRepository Category { get; }
         IProductRepository Product { get; }
         IMotorcycleRepository Motorcycle { get; }
+        IShoppingCartRepository ShoppingCart { get; }
+        IApplicationUserRepository ApplicationUser { get; }
         IMotorcycleVideosRepository MotorcycleVideos { get; }
         IPortfolioImagesRepository PortfolioImages { get; }
         ICompanyRepository Company { get; }
