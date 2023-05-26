@@ -16,12 +16,11 @@ namespace TylorTrubPortfolio.DataAccess.Repository
         internal DbSet<T> dbSet;
 
         /// <summary>
-        /// The motorcycle and bookstore DBs are seperated intentionally.
+        /// The motorcycle and portfolio DBs are seperated intentionally.
         /// I don't see why they would logically be connected. Also, I like the challenge of
         /// juggling two context and seeing how .NET Core 8 handles it. Seems good!
         /// </summary>
-        /// <param name="book">BookStore and categories DB.</param>
-        /// <param name="motorcycle">Motorcycle store, information, and CDN DB.</param>        
+        /// <param name="db">Portfolio DB.</param> 
         public Repository(DbContext db)
         {
             _portfolioDBContext = (PortfolioDBContext?)db;
