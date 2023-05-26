@@ -22,6 +22,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
         public DbSet<Motorcycle> Motorcycles { get; set; }
         public DbSet<MotorcycleVideo> MotorcycleVideos { get; set; }
         public DbSet<PortfolioImage> PortfolioImageVideos { get; set; }
+        public DbSet<Company> Companies { get; set; }
         public DbSet<ApplicationUser> applicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -32,7 +33,41 @@ namespace TylorTrubPortfolio.DataAccess.Data
             modelBuilder.Entity<Category>().HasData(
                 new Category { Id = 1, Name = "Action", DisplayOrder = 1 },
                 new Category { Id = 2, Name = "SciFi", DisplayOrder = 2 },
-                new Category { Id = 3, Name = "History", DisplayOrder = 3 });
+                new Category { Id = 3, Name = "History", DisplayOrder = 3 }
+                );
+
+            modelBuilder.Entity<Company>().HasData(
+                new Company
+                {
+                    Id = 1,
+                    Name = "Tech Industrials",
+                    StreetAddress = "321 Tech St.",
+                    City = "Torrance",
+                    PostalCode = "98001",
+                    State = "CA",
+                    PhoneNumber = "3105556612"
+                },
+                new Company
+                {
+                    Id = 2,
+                    Name = "Elastic Books",
+                    StreetAddress = "912 Vilardo St.",
+                    City = "Royal Oak",
+                    PostalCode = "48312",
+                    State = "MI",
+                    PhoneNumber = "2485556947"
+                },
+                new Company
+                {
+                    Id = 3,
+                    Name = "Readers Club",
+                    StreetAddress = "999 Main St.",
+                    City = "Lala Land",
+                    PostalCode = "99999",
+                    State = "TN",
+                    PhoneNumber = "6725556993"
+                }
+                );
 
             modelBuilder.Entity<Product>().HasData(
                 new Product

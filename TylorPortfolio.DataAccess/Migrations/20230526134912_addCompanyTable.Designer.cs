@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TylorTrubPortfolio.DataAccess.Data;
 
@@ -11,9 +12,11 @@ using TylorTrubPortfolio.DataAccess.Data;
 namespace TylorTrubPortfolio.DataAccess.Migrations
 {
     [DbContext(typeof(PortfolioDBContext))]
-    partial class BookStoreDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230526134912_addCompanyTable")]
+    partial class addCompanyTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -270,7 +273,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.Company", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.Models.Models.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -300,38 +303,6 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "Torrance",
-                            Name = "Tech Industrials",
-                            PhoneNumber = "3105556612",
-                            PostalCode = "98001",
-                            State = "CA",
-                            StreetAddress = "321 Tech St."
-                        },
-                        new
-                        {
-                            Id = 2,
-                            City = "Royal Oak",
-                            Name = "Elastic Books",
-                            PhoneNumber = "2485556947",
-                            PostalCode = "48312",
-                            State = "MI",
-                            StreetAddress = "912 Vilardo St."
-                        },
-                        new
-                        {
-                            Id = 3,
-                            City = "Lala Land",
-                            Name = "Readers Club",
-                            PhoneNumber = "6725556993",
-                            PostalCode = "99999",
-                            State = "TN",
-                            StreetAddress = "999 Main St."
-                        });
                 });
 
             modelBuilder.Entity("TylorTrubPortfolio.Models.Motorcycle", b =>
@@ -382,7 +353,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            AddDate = new DateTime(2023, 5, 26, 10, 45, 20, 365, DateTimeKind.Local).AddTicks(1248),
+                            AddDate = new DateTime(2023, 5, 26, 9, 49, 12, 719, DateTimeKind.Local).AddTicks(1089),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke V4",
                             Hp = "0",
@@ -396,7 +367,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            AddDate = new DateTime(2023, 5, 26, 10, 45, 20, 365, DateTimeKind.Local).AddTicks(1293),
+                            AddDate = new DateTime(2023, 5, 26, 9, 49, 12, 719, DateTimeKind.Local).AddTicks(1159),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke Supercharged",
                             Hp = "0",
@@ -410,7 +381,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            AddDate = new DateTime(2023, 5, 26, 10, 45, 20, 365, DateTimeKind.Local).AddTicks(1296),
+                            AddDate = new DateTime(2023, 5, 26, 9, 49, 12, 719, DateTimeKind.Local).AddTicks(1162),
                             Brakes = "1-Disc-Rear, 2-Front",
                             EngineStyle = "4-Stroke Twin Boxer",
                             Hp = "0",
@@ -837,10 +808,6 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CompanyId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -853,8 +820,6 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
 
                     b.Property<string>("StreetAddress")
                         .HasColumnType("nvarchar(max)");
-
-                    b.HasIndex("CompanyId");
 
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
@@ -919,17 +884,6 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("TylorTrubPortfolio.Models.Models.ApplicationUser", b =>
-                {
-                    b.HasOne("TylorTrubPortfolio.Models.Company", "Company")
-                        .WithMany()
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Company");
                 });
 #pragma warning restore 612, 618
         }

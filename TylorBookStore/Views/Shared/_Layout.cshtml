@@ -41,8 +41,8 @@
                                 </li>
                             </ul>
                         </li>
-                        @if(User.IsInRole(SD.Role_Admin))
-                        {
+                        @* @if(User.IsInRole(SD.Role_Admin))
+                        { *@
                             <li class="nav-seperator">
                                 |
                             </li>
@@ -57,9 +57,12 @@
                                     <li>
                                         <a class="nav-link" asp-area="Admin" asp-controller="Product" asp-action="Index">Products</a>
                                     </li>
+                                    <li>
+                                        <a class="nav-link" asp-area="Admin" asp-controller="Company" asp-action="Index">Companies</a>
+                                    </li>
                                 </ul>
                             </li>
-                        }
+                        @* } *@
                         <li class="nav-seperator">
                             |
                         </li>

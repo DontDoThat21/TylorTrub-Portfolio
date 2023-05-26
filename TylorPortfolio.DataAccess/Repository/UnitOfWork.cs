@@ -16,6 +16,7 @@ namespace TylorTrubPortfolio.DataAccess.Repository
         public IMotorcycleRepository Motorcycle { get; private set; }
         public IMotorcycleVideosRepository MotorcycleVideos { get; private set; }
         public IPortfolioImagesRepository PortfolioImages { get; private set; }
+        public ICompanyRepository Company { get; private set; }
 
         public UnitOfWork(PortfolioDBContext bookDb)
         { 
@@ -26,6 +27,7 @@ namespace TylorTrubPortfolio.DataAccess.Repository
             Motorcycle = new MotorcycleRepository(_portfolioDBContext);
             MotorcycleVideos = new MotorcycleVideosRepository(_portfolioDBContext);
             PortfolioImages = new PortfolioImageRepository(_portfolioDBContext);
+            Company = new CompanyRepository(_portfolioDBContext);
 
         }
 

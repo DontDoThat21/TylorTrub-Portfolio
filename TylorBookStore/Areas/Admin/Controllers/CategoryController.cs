@@ -9,7 +9,7 @@ using TylorTrubPortfolio.Utility;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers
 {
-    [Area("Admin")]
+    //[Area("Admin")]
     [Authorize(Roles = SD.Role_Admin)]
     public class CategoryController : Controller
     {

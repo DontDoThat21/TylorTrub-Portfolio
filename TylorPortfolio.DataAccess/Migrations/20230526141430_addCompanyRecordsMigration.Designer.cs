@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TylorTrubPortfolio.DataAccess.Data;
 
@@ -11,9 +12,11 @@ using TylorTrubPortfolio.DataAccess.Data;
 namespace TylorTrubPortfolio.DataAccess.Migrations
 {
     [DbContext(typeof(PortfolioDBContext))]
-    partial class BookStoreDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230526141430_addCompanyRecordsMigration")]
+    partial class addCompanyRecordsMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -382,7 +385,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            AddDate = new DateTime(2023, 5, 26, 10, 45, 20, 365, DateTimeKind.Local).AddTicks(1248),
+                            AddDate = new DateTime(2023, 5, 26, 10, 14, 29, 888, DateTimeKind.Local).AddTicks(3020),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke V4",
                             Hp = "0",
@@ -396,7 +399,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            AddDate = new DateTime(2023, 5, 26, 10, 45, 20, 365, DateTimeKind.Local).AddTicks(1293),
+                            AddDate = new DateTime(2023, 5, 26, 10, 14, 29, 888, DateTimeKind.Local).AddTicks(3066),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke Supercharged",
                             Hp = "0",
@@ -410,7 +413,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            AddDate = new DateTime(2023, 5, 26, 10, 45, 20, 365, DateTimeKind.Local).AddTicks(1296),
+                            AddDate = new DateTime(2023, 5, 26, 10, 14, 29, 888, DateTimeKind.Local).AddTicks(3069),
                             Brakes = "1-Disc-Rear, 2-Front",
                             EngineStyle = "4-Stroke Twin Boxer",
                             Hp = "0",
@@ -837,10 +840,6 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CompanyId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -853,8 +852,6 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
 
                     b.Property<string>("StreetAddress")
                         .HasColumnType("nvarchar(max)");
-
-                    b.HasIndex("CompanyId");
 
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
@@ -919,17 +916,6 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("TylorTrubPortfolio.Models.Models.ApplicationUser", b =>
-                {
-                    b.HasOne("TylorTrubPortfolio.Models.Company", "Company")
-                        .WithMany()
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Company");
                 });
 #pragma warning restore 612, 618
         }
