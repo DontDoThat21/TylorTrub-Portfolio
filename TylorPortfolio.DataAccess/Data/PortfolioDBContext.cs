@@ -23,6 +23,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
         public DbSet<MotorcycleVideo> MotorcycleVideos { get; set; }
         public DbSet<PortfolioImage> PortfolioImageVideos { get; set; }
         public DbSet<Company> Companies { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts{ get; set; }
         public DbSet<ApplicationUser> applicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
