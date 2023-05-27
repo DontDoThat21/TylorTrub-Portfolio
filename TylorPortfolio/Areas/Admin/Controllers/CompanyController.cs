@@ -6,8 +6,6 @@ using System.Data;
 using TylorTrubPortfolio.DataAccess.Data;
 using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 using TylorTrubPortfolio.Models;
-using TylorTrubPortfolio.Models.Models;
-using TylorTrubPortfolio.Models.ViewModels;
 using TylorTrubPortfolio.Utility;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers

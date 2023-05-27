@@ -5,7 +5,6 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using TylorTrubPortfolio.Models;
-using TylorTrubPortfolio.Models.Models;
 
 namespace TylorTrubPortfolio.DataAccess.Repository.IRepository
 {

@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using TylorTrubPortfolio.DataAccess.Data;
 using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 using TylorTrubPortfolio.Models;
-using TylorTrubPortfolio.Models.Models;
 
 namespace TylorTrubPortfolio.DataAccess.Repository
 {

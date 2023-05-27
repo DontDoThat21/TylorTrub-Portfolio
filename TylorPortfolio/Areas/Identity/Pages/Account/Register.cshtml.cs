@@ -21,7 +21,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using TylorTrubPortfolio.DataAccess.Repository.IRepository;
-using TylorTrubPortfolio.Models.Models;
+using TylorTrubPortfolio.Models;
 using TylorTrubPortfolio.Utility;
 
 namespace TylorTrubPortfolio.Areas.Identity.Pages.Account

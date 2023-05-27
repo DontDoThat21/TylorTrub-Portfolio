@@ -34,10 +34,15 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
             return View(productList);
         }
 
-        public IActionResult Details(int id)
+        public IActionResult Details(int productId)
         {
-            Product product = _unitOfWork.Product.Get(u=>u.Id==id, includeProperties: "Category");
-            return View(product);
+            ShoppingCart cart = new()
+            {
+                Product = _unitOfWork.Product.Get(u => u.Id == productId, includeProperties: "Category"),
+                Count = 1,
+                ProductId = productId
+            };
+            return View(cart);
         }
 
         public IActionResult Privacy()

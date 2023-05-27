@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using System.Resources;
 using TylorTrubPortfolio.DataAccess.Helpers;
 using TylorTrubPortfolio.Models;
-using TylorTrubPortfolio.Models.Models;
 
 namespace TylorTrubPortfolio.DataAccess.Data
 {
