@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TylorTrubPortfolio.Models.Models
+namespace TylorTrubPortfolio.Models
 {
     public class ShoppingCart
     {
