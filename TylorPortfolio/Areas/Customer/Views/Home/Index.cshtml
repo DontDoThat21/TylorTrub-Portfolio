@@ -15,47 +15,57 @@
 
     <h2 class="text-center">
         <a asp-controller="Home" asp-action="MVCDemo">
-            Check out my latest MVC .NET 8 project!
+            Check out my latest MVC .NET 8 (still preview 5/27) project!
         </a>
     </h2>
 </div>
 
-<div class="container">
+<div class="border-bottom" style="height: 5px; width: 100%;"></div>
+<br />
+
+
+
+<div class="container-lg">
     @for (int i = 0; i < Model.PortfolioImageList.Count; i++)
     {
         if (i % 2 == 0 || i == 0)
         {
             // draw top row only and give image to top left col
             <div class="row">
-                <div class="col-4" style="border: 1px solid red;">
-                    @Model.PortfolioImageList[i].DisplayText
-                    <img src="~/Images/home/@Model.PortfolioImageList[i].FileName" class="img-fluid border-0 rounded">
+                <div class="col-6">
+                    <p style="float: left">
+                        @Model.PortfolioImageList[i].DisplayText
+                    </p>
+                    <img src="~/Images/home/@Model.PortfolioImageList[i].FileName" class="pull-left border-0 rounded">
 
                 </div>
                 <div class="row"></div>
-                <div class="col-8" style="border: 1px solid blue;">
+                <div class="col-6" >
+                    <br>
                     <img src="~/Images/home/lineTopLeftBottomRightWavy.png" class="img-fluid border-0 rounded">
 
                 </div>
-                <div class="col-4" style="border: 1px solid blue;">
+                <div class="col-6">
                 </div>
             </div>
         }
         else // odd
         {
             <div class="row">
-                <div class="col-4" style="border: 1px solid blue;">
+                <div class="col-3" style="border:double 1px green">
                 </div>
-                <div class="col-4" style="border: 1px solid blue;">
-
+                <div class="col-3" style="border:double 1px blue">
                 </div>
-                <div class="col-4" style="border: 1px solid red;">
-                    @Model.PortfolioImageList[i].DisplayText
-                    <img src="~/Images/home/@Model.PortfolioImageList[i].FileName" class="img-fluid border-0 rounded">
+                <div class="col-6" style="border:double 1px red">
+                    <p style="float: right">
+                        @Model.PortfolioImageList[i].DisplayText
+                    </p>
+                    <img src="~/Images/home/@Model.PortfolioImageList[i].FileName" class="pull-right border-0 rounded">
                 </div>
                 <div class="row"></div>
-                <div class="col-4"></div>
-                <div class="col-8" style="border: 1px solid blue;">
+                <div class="col-6"></div>
+                <div class="col-6" >
+                    <br>
                     <img src="~/Images/home/lineTopRightBottomLeftWavy.png" class="img-fluid border-0 rounded">
 
                 </div>

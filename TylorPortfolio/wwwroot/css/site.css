@@ -95,3 +95,38 @@ td[colspan="4"] {
     opacity: .8;
 }
 
+.pull-right {
+    text-align: right;
+    float: right;
+    min-height: 300px;
+    min-width: 300px;
+    max-height: 560px;
+    max-width: 1000px;
+}
+
+.pull-left {
+    text-align: left;
+    float: left;
+    min-height: 300px;
+    min-width: 300px;
+    max-height: 560px;
+    max-width: 1000px;
+}
+
+:hover {
+    transition: 0.6s ease;
+}
+
+.pull-left:hover {
+    min-height: 720px;
+    max-height: 900px;
+    max-width: 1600px;
+}
+
+.pull-right:hover {
+    min-height: 720px;
+    max-height: 900px;
+    max-width: 1600px;
+}
+
+

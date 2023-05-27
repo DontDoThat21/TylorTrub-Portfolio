@@ -208,7 +208,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 });
 
             modelBuilder.Entity<PortfolioImage>().HasData(
-                new PortfolioImage 
+                new PortfolioImage
                 {
                     Id = 1,
                     DisplayText = "I have managed and upgraded software systems in Los Angeles, Tennessee," +
@@ -218,66 +218,67 @@ namespace TylorTrubPortfolio.DataAccess.Data
                     FileName = "home1.jpg",
                     Name = "LA Flight View Home 1"
                 });
-            
-            modelBuilder.Entity<PortfolioImage>().HasData(
-                new PortfolioImage 
-                {
-                    Id = 2,
-                    DisplayText = "As a teen, I moved to North Carolina with my family to finish school and continue " +
-                    "my education towards being a software developer. NC being known for it's hills, I was quite the avid skateboarder.",
-                    FileName = "home2.jpg",
-                    Name = "Home 2"
-                });;
 
             modelBuilder.Entity<PortfolioImage>().HasData(
-                new PortfolioImage
-                {
-                    Id = 3,
-                    DisplayText = "Motorcycling is a big hobby of mine. As you scroll down," +
-                    "you will see more of my travels, what I like to do for fun," +
-                    "and core pieces of who I am.",
-                    FileName = "homebike3.jpg",
-                    Name = "Fox Hoodie DET Home 3"
-                });
+               new PortfolioImage
+               {
+                   Id = 2,
+                   DisplayText = "Working closely with shop carpenters and foreman, creating tailored applications was an exciting opportunity to grow" +
+                   "as a developer, and as a solutions architect.",
+                   FileName = "homecawork2.jpg",
+                   Name = "CA Work Warehouse 1"
+               });
+
+            modelBuilder.Entity<PortfolioImage>().HasData(
+               new PortfolioImage
+               {
+                   Id = 3,
+                   DisplayText = "I maintained, improved, and created paint management software " +
+                   "as a developer, and as a solutions architect.",
+                   FileName = "homemiwork1.jpg",
+                   Name = "MI Work Paint 1"
+               });
 
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
                     Id = 4,
-                    DisplayText = "Motorcycling is a big hobby of mine. As you scroll down," +
-                    "you will see more of my travels, what I like to do for fun," +
-                    "and core pieces of who I am.",
-                    FileName = "homebike1.jpg",
-                    Name = "Shelby DET Home 1"
+                    DisplayText = "I've built many desktops, but this has to be my most nostalgic build. " +
+                    "A roughly rummaged together yet powerful machine to get the job done well is sometimes all it takes!",
+                    FileName = "homedesktopcustom1.jpg",
+                    Name = "Desktop MI Desktop AH 1"
                 });
 
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
                     Id = 5,
-                    DisplayText = "Auburn Hills is a beautiful area, with tons of activities and exciting opportunities.",
-                    FileName = "homeauburnhills1.jpg",
-                    Name = "AH DET Apt 1"
+                    DisplayText = "My first professional desk after beginning a software engineering role, remotely. " +
+                    "The pad at Boulevard Appts. was great, too many memories to count here. Would recommend.",
+                    FileName = "homedesk1.jpg",
+                    Name = "Home Desk MI Desk AH 1"
                 });
 
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
                     Id = 6,
-                    DisplayText = "It can even snow in Auburn Hills when it's sunny out!",
-                    FileName = "homeauburnhills2.jpg",
-                    Name = "AH DET Apt 2"
+                    DisplayText = "After a while I perfected my remote setup. " +
+                    "Top monitor exclusively for StackOverflow and debugging knowledge/research!",
+                    FileName = "homedeskwork1.jpg",
+                    Name = "Desktop MI Desk AH 2"
                 });
 
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
                     Id = 7,
-                    DisplayText = "The snow build up can be quite intense at times. " +
-                    "That's when you take off traction control, and find an empty parking lot!",
-                    FileName = "homeauburnhills3.jpg",
-                    Name = "AH DET Apt 3"
+                    DisplayText = "I made custom Raspberry Pi projects come to life with HDMI inserts to feed off the current source, " +
+                    "and thus illuminate the given corner/edge/vicinity with the same color, ambient style! Very neat project.",
+                    FileName = "homecomputerprojectpi1.jpg",
+                    Name = "Raspberry Pi MI Yoda 1"
                 });
+
 
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
@@ -290,63 +291,62 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 });
 
             modelBuilder.Entity<PortfolioImage>().HasData(
-               new PortfolioImage
-               {
-                   Id = 9,
-                   DisplayText = "Working closely with shop carpenters and foreman, creating tailored applications was an exciting opportunity to grow" +
-                   "as a developer, and as a solutions architect.",
-                   FileName = "homecawork2.jpg",
-                   Name = "CA Work Warehouse 1"
-               });
+                new PortfolioImage 
+                {
+                    Id = 9,
+                    DisplayText = "As a teen, I moved to North Carolina with my family to finish school and continue " +
+                    "my education towards being a software developer. NC being known for it's hills, I was quite the avid skateboarder.",
+                    FileName = "home2.jpg",
+                    Name = "Home 2"
+                });;
 
             modelBuilder.Entity<PortfolioImage>().HasData(
-               new PortfolioImage
-               {
-                   Id = 10,
-                   DisplayText = "I maintained, improved, and created " +
-                   "as a developer, and as a solutions architect.",
-                   FileName = "homemiwork1.jpg",
-                   Name = "MI Work Paint 1"
-               });
+                new PortfolioImage
+                {
+                    Id = 10,
+                    DisplayText = "Motorcycling is a big hobby of mine. As you scroll down, " +
+                    "you will see more of my travels, what I like to do for fun," +
+                    "and core pieces of who I am.",
+                    FileName = "homebike3.jpg",
+                    Name = "Fox Hoodie DET Home 3"
+                });
 
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
                     Id = 11,
-                    DisplayText = "Crossing the Upper Peninsula of Michigan on a sport-bike is wild! " +
-                    "The middle connection is grated, leaving you with an intimidating view down! It's worth it just to see all Michigan offers of course.",
-                    FileName = "homedancininseptemba1.jpg",
-                    Name = "CA Work Warehouse 1"
+                    DisplayText = "Auburn Hills is a beautiful area, with tons of activities and exciting opportunities.",
+                    FileName = "homeauburnhills1.jpg",
+                    Name = "AH DET Apt 1"
                 });
-            
+
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
                     Id = 12,
-                    DisplayText = "My first professional desk after beginning a software engineering role, remotely. " +
-                    "The pad at Boulevard Appts. was great, too many memories to count here. Would recommend.",
-                    FileName = "homedesk1.jpg",
-                    Name = "Home Desk MI Desk AH 1"
+                    DisplayText = "It can even snow in Auburn Hills when it's sunny out!",
+                    FileName = "homeauburnhills2.jpg",
+                    Name = "AH DET Apt 2"
                 });
 
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
                     Id = 13,
-                    DisplayText = "I've built many desktops, but this has to be my most nostalgic build. " +
-                    "A roughly rummaged together yet powerful machine to get the job done well is sometimes all it takes!",
-                    FileName = "homedesktopcustom1.jpg",
-                    Name = "Desktop MI Desktop AH 1"
-                });
-
+                    DisplayText = "The snow build up can be quite intense at times. " +
+                    "That's when you take off traction control, and find an empty parking lot!",
+                    FileName = "homeauburnhills3.jpg",
+                    Name = "AH DET Apt 3"
+                });            
+            
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
                     Id = 14,
-                    DisplayText = "After a while I perfected my remote setup. " +
-                    "Top monitor exclusively for StackOverflow and debugging knowledge/research!",
-                    FileName = "homedeskwork1.jpg",
-                    Name = "Desktop MI Desk AH 2"
+                    DisplayText = "Crossing the Upper Peninsula of Michigan on a sport-bike is wild! " +
+                    "The middle connection is grated, leaving you with an intimidating view down! It's worth it just to see all Michigan offers of course.",
+                    FileName = "homedancininseptemba1.jpg",
+                    Name = "CA Work Warehouse 1"
                 });
 
             modelBuilder.Entity<PortfolioImage>().HasData(
@@ -424,36 +424,16 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 new PortfolioImage
                 {
                     Id = 22,
-                    DisplayText = "I used to take the scenic routes of Detroit after work, and just enjoy the sky. " +
-                    "Nothing like the smell of the Earth's Petrichor into a pleasant ride around town. Sure makes wheelies scary though!",
-                    FileName = "homebikejoslyn1.jpg",
-                    Name = "Motorcycling MI Joslyn 1"
-                });
+                    DisplayText = "Motorcycling with pals, and Baby Yoda sponsored FOX hoodies? Sign me up! " +
+                    "I miss this hoodie and wish I could find a replacement. So many compliments with it!",
+                    FileName = "homebikeyoda1.jpg",
+                    Name = "Motorcycling MI Yoda 1"
+                });            
 
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
                     Id = 23,
-                    DisplayText = "Motorcycling with pals, and Baby Yoda sponsored FOX hoodies? Sign me up! " +
-                    "I miss this hoodie and wish I could find a replacement. So many compliments with it!",
-                    FileName = "homebikeyoda1.jpg",
-                    Name = "Motorcycling MI Yoda 1"
-                });
-
-            modelBuilder.Entity<PortfolioImage>().HasData(
-                new PortfolioImage
-                {
-                    Id = 24,
-                    DisplayText = "I made custom Raspberry Pi projects come to life with HDMI inserts to feed off the current source, " +
-                    "and thus illuminate the given corner/edge/vicinity with the same color, ambient style! Very neat project.",
-                    FileName = "homecomputerprojectpi1.jpg",
-                    Name = "Raspberry Pi MI Yoda 1"
-                });
-
-            modelBuilder.Entity<PortfolioImage>().HasData(
-                new PortfolioImage
-                {
-                    Id = 25,
                     DisplayText = "I for one, enjoyed the experiences that COVID offered me. More room for motorcycles on the road; " +
                     "it was a great opportunity to improve my desktop, and enjoy working from home at the same time.",
                     FileName = "homedesk1.jpg",
@@ -463,7 +443,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
-                    Id = 26,
+                    Id = 24,
                     DisplayText = "The fam out here in NC is great! Nothing like spending time with those you love. " +
                     "From fishing, to driving to beautiful scenery, to concerts, we do it all!",
                     FileName = "homegroupnc1.jpg",
@@ -473,7 +453,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
-                    Id = 27,
+                    Id = 25,
                     DisplayText = "I really enjoy playing my guitar when I have time to do so. " +
                     "One day I am sure I'll have a nice guitar collection! *starts playing dear god by a7x*.",
                     FileName = "homeguitarpontiac1.jpg",
@@ -483,7 +463,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
-                    Id = 28,
+                    Id = 26,
                     DisplayText = "Michigan will probably always be 'home' to me; I was raised close to 9 mile " +
                     "and the streets here have definitely had a large influence on my life.",
                     FileName = "homemichigan1.jpg",
@@ -493,7 +473,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
-                    Id = 29,
+                    Id = 27,
                     DisplayText = "I am a big fan of Bicycling! It's good exercise and I love to see new trails and new people who share " +
                     "the same hobby. Feels like you're part of a club or something sometimes..",
                     FileName = "homemichiganbike1.jpg",
@@ -503,7 +483,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
             modelBuilder.Entity<PortfolioImage>().HasData(
                 new PortfolioImage
                 {
-                    Id = 30,
+                    Id = 28,
                     DisplayText = "The beauty of Michigan is sometimes understated. You truly experience all seasons, and the spring and fall feels " +
                     "like free air conditioning outside! It's great.",
                     FileName = "homemichiganboulevard1.jpg",

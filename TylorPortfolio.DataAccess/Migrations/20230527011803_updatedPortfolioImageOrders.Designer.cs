@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TylorTrubPortfolio.DataAccess.Data;
 
@@ -11,9 +12,11 @@ using TylorTrubPortfolio.DataAccess.Data;
 namespace TylorTrubPortfolio.DataAccess.Migrations
 {
     [DbContext(typeof(PortfolioDBContext))]
-    partial class BookStoreDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230527011803_updatedPortfolioImageOrders")]
+    partial class updatedPortfolioImageOrders
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -409,7 +412,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            AddDate = new DateTime(2023, 5, 27, 15, 55, 57, 112, DateTimeKind.Local).AddTicks(103),
+                            AddDate = new DateTime(2023, 5, 26, 21, 18, 3, 762, DateTimeKind.Local).AddTicks(676),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke V4",
                             Hp = "0",
@@ -423,7 +426,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            AddDate = new DateTime(2023, 5, 27, 15, 55, 57, 112, DateTimeKind.Local).AddTicks(147),
+                            AddDate = new DateTime(2023, 5, 26, 21, 18, 3, 762, DateTimeKind.Local).AddTicks(722),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke Supercharged",
                             Hp = "0",
@@ -437,7 +440,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            AddDate = new DateTime(2023, 5, 27, 15, 55, 57, 112, DateTimeKind.Local).AddTicks(150),
+                            AddDate = new DateTime(2023, 5, 26, 21, 18, 3, 762, DateTimeKind.Local).AddTicks(725),
                             Brakes = "1-Disc-Rear, 2-Front",
                             EngineStyle = "4-Stroke Twin Boxer",
                             Hp = "0",
@@ -575,132 +578,146 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 10,
-                            DisplayText = "Motorcycling is a big hobby of mine. As you scroll down, you will see more of my travels, what I like to do for fun,and core pieces of who I am.",
+                            DisplayText = "Motorcycling is a big hobby of mine. As you scroll down,you will see more of my travels, what I like to do for fun,and core pieces of who I am.",
                             FileName = "homebike3.jpg",
                             Name = "Fox Hoodie DET Home 3"
                         },
                         new
                         {
                             Id = 11,
+                            DisplayText = "Motorcycling is a big hobby of mine. As you scroll down,you will see more of my travels, what I like to do for fun,and core pieces of who I am.",
+                            FileName = "homebike1.jpg",
+                            Name = "Shelby DET Home 1"
+                        },
+                        new
+                        {
+                            Id = 12,
                             DisplayText = "Auburn Hills is a beautiful area, with tons of activities and exciting opportunities.",
                             FileName = "homeauburnhills1.jpg",
                             Name = "AH DET Apt 1"
                         },
                         new
                         {
-                            Id = 12,
+                            Id = 13,
                             DisplayText = "It can even snow in Auburn Hills when it's sunny out!",
                             FileName = "homeauburnhills2.jpg",
                             Name = "AH DET Apt 2"
                         },
                         new
                         {
-                            Id = 13,
+                            Id = 14,
                             DisplayText = "The snow build up can be quite intense at times. That's when you take off traction control, and find an empty parking lot!",
                             FileName = "homeauburnhills3.jpg",
                             Name = "AH DET Apt 3"
                         },
                         new
                         {
-                            Id = 14,
+                            Id = 15,
                             DisplayText = "Crossing the Upper Peninsula of Michigan on a sport-bike is wild! The middle connection is grated, leaving you with an intimidating view down! It's worth it just to see all Michigan offers of course.",
                             FileName = "homedancininseptemba1.jpg",
                             Name = "CA Work Warehouse 1"
                         },
                         new
                         {
-                            Id = 15,
+                            Id = 16,
                             DisplayText = "I decided to buy a cheap dirk-bike and assemble it from an online store. Would not recommend! Was underpowered and arrived with problems. Fun though!",
                             FileName = "homedirtbike1.jpg",
                             Name = "Desktop MI AH Bike 2"
                         },
                         new
                         {
-                            Id = 16,
+                            Id = 17,
                             DisplayText = "Finishing the assembly was a joy, however I ultimately had to replace the carb with a newer custom one. This increased the BHP by about 10%.",
                             FileName = "homedirtbike2.jpg",
                             Name = "Desktop MI AH Bike 2"
                         },
                         new
                         {
-                            Id = 17,
+                            Id = 18,
                             DisplayText = "I am a big fan of Columbian espresso. Cafe La Llave is the best! Would add some French Vanilla at the end of preparation for a perfect treat! ",
                             FileName = "homeespresso1.jpg",
                             Name = "Desktop MI Espresso AH 1"
                         },
                         new
                         {
-                            Id = 18,
+                            Id = 19,
                             DisplayText = "Gaming is in my blood! As a kid, I started programming back end software with a title named Garry's Mod. Research TTT and look up WITD Server if curious!",
                             FileName = "homegaming1.jpg",
                             Name = "Gaming MI Halo 1"
                         },
                         new
                         {
-                            Id = 19,
+                            Id = 20,
                             DisplayText = "StarCraft is my favorite game! It requires so much attention, and intense multi tasking proficiency. Something I consider myself skilled at, I love StarCraft even though some consider it too difficult to learn. Life is about mastering difficult things anyways!",
                             FileName = "homegamingsc1.jpg",
                             Name = "Gaming MI Cuddles SC2 1"
                         },
                         new
                         {
-                            Id = 20,
+                            Id = 21,
                             DisplayText = "Nothing like winding down with a beverage and some Dark Souls III. Most challenging title I've every played with a controller by far! Dex builds know what's up!",
                             FileName = "homebikegaming3.jpg",
                             Name = "Gaming MI Dark Souls 1"
                         },
                         new
                         {
-                            Id = 21,
+                            Id = 22,
                             DisplayText = "I used to take the scenic routes of Detroit after work, and just enjoy the sky. Nothing like the smell of the Earth's Petrichor into a pleasant ride around town. Sure makes wheelies scary though!",
                             FileName = "homebikejoslyn1.jpg",
                             Name = "Motorcycling MI Joslyn 1"
                         },
                         new
                         {
-                            Id = 22,
+                            Id = 23,
+                            DisplayText = "I used to take the scenic routes of Detroit after work, and just enjoy the sky. Nothing like the smell of the Earth's Petrichor into a pleasant ride around town. Sure makes wheelies scary though!",
+                            FileName = "homebikejoslyn1.jpg",
+                            Name = "Motorcycling MI Joslyn 1"
+                        },
+                        new
+                        {
+                            Id = 24,
                             DisplayText = "Motorcycling with pals, and Baby Yoda sponsored FOX hoodies? Sign me up! I miss this hoodie and wish I could find a replacement. So many compliments with it!",
                             FileName = "homebikeyoda1.jpg",
                             Name = "Motorcycling MI Yoda 1"
                         },
                         new
                         {
-                            Id = 23,
+                            Id = 25,
                             DisplayText = "I for one, enjoyed the experiences that COVID offered me. More room for motorcycles on the road; it was a great opportunity to improve my desktop, and enjoy working from home at the same time.",
                             FileName = "homedesk1.jpg",
                             Name = "Desk MI Signs 1"
                         },
                         new
                         {
-                            Id = 24,
+                            Id = 26,
                             DisplayText = "The fam out here in NC is great! Nothing like spending time with those you love. From fishing, to driving to beautiful scenery, to concerts, we do it all!",
                             FileName = "homegroupnc1.jpg",
                             Name = "Home NC Group 1"
                         },
                         new
                         {
-                            Id = 25,
+                            Id = 27,
                             DisplayText = "I really enjoy playing my guitar when I have time to do so. One day I am sure I'll have a nice guitar collection! *starts playing dear god by a7x*.",
                             FileName = "homeguitarpontiac1.jpg",
                             Name = "Desk MI Signs 1"
                         },
                         new
                         {
-                            Id = 26,
+                            Id = 28,
                             DisplayText = "Michigan will probably always be 'home' to me; I was raised close to 9 mile and the streets here have definitely had a large influence on my life.",
                             FileName = "homemichigan1.jpg",
                             Name = "Home MI Sky 1"
                         },
                         new
                         {
-                            Id = 27,
+                            Id = 29,
                             DisplayText = "I am a big fan of Bicycling! It's good exercise and I love to see new trails and new people who share the same hobby. Feels like you're part of a club or something sometimes..",
                             FileName = "homemichiganbike1.jpg",
                             Name = "Home MI Sky 1"
                         },
                         new
                         {
-                            Id = 28,
+                            Id = 30,
                             DisplayText = "The beauty of Michigan is sometimes understated. You truly experience all seasons, and the spring and fall feels like free air conditioning outside! It's great.",
                             FileName = "homemichiganboulevard1.jpg",
                             Name = "Home MI Sky 1"
