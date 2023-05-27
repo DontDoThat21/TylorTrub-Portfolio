@@ -4,22 +4,29 @@
 
 @model HomeViewModel
 
+<a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Delete">test delkete</a>
+<a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">test index</a>
 
 <div class="container text-center">
-    <h3 class="display-4">Hello, my name is Tylor Trub.</h3>
-    <p>I am a full-stack developer, with a C#.NET back-end focus.</p>
-    <p>Check out my projects, example labs, and examples of my work above.</p>
-    <p>I host the majority of my code on <a href="https://github.com/DontDoThat21">GitHub</a>.</p>
-    <p>Feel free to relax and play some <a asp-controller="Games" asp-action="Index">HTML5/CSS3 games</a> I've created.</p>
-    <p>Available 8am EST to 5pm EST. <a href="mailto:tylortrub@gmail.com">tylortrub@gmail.com</a></p>
+    <div class="card">
+        <h3 class="display-4 card-header">Hello, my name is Tylor C. Trub.</h3>
+        <div class="card-body p-4">
+            <p>I am a full-stack developer, with a C#.NET back-end focus.</p>
+            <p>Check out my projects, example labs, and examples of my work above.</p>
+            <p>I host the majority of my code on <a href="https://github.com/DontDoThat21">GitHub</a>.</p>
+            <p>Feel free to relax and play some <a asp-controller="Games" asp-action="Index">HTML5/CSS3 games</a> I've created.</p>
+            <p>Available 8am EST to 5pm EST. <a href="mailto:tylortrub@gmail.com">tylortrub@gmail.com</a></p>
 
-    <h2 class="text-center">
-        <a asp-controller="Home" asp-action="MVCDemo">
-            Check out my latest MVC .NET 8 (still preview 5/27) project!
-        </a>
-    </h2>
+            <h2 class="text-center">
+                <a asp-controller="Home" asp-action="MVCDemo">
+                    Check out my latest MVC .NET 8 (still preview 5/27) project!
+                </a>
+            </h2>
+        </div>        
+    </div>    
 </div>
 
+<br />
 <div class="border-bottom" style="height: 5px; width: 100%;"></div>
 <br />
 
