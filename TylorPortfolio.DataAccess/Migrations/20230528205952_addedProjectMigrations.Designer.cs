@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TylorTrubPortfolio.DataAccess.Data;
 
@@ -11,9 +12,11 @@ using TylorTrubPortfolio.DataAccess.Data;
 namespace TylorTrubPortfolio.DataAccess.Migrations
 {
     [DbContext(typeof(PortfolioDBContext))]
-    partial class BookStoreDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230528205952_addedProjectMigrations")]
+    partial class addedProjectMigrations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -417,7 +420,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            AddDate = new DateTime(2023, 5, 28, 17, 12, 46, 199, DateTimeKind.Local).AddTicks(7848),
+                            AddDate = new DateTime(2023, 5, 28, 16, 59, 52, 43, DateTimeKind.Local).AddTicks(1663),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke V4",
                             Hp = "0",
@@ -431,7 +434,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            AddDate = new DateTime(2023, 5, 28, 17, 12, 46, 199, DateTimeKind.Local).AddTicks(7892),
+                            AddDate = new DateTime(2023, 5, 28, 16, 59, 52, 43, DateTimeKind.Local).AddTicks(1705),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke Supercharged",
                             Hp = "0",
@@ -445,7 +448,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            AddDate = new DateTime(2023, 5, 28, 17, 12, 46, 199, DateTimeKind.Local).AddTicks(7895),
+                            AddDate = new DateTime(2023, 5, 28, 16, 59, 52, 43, DateTimeKind.Local).AddTicks(1708),
                             Brakes = "1-Disc-Rear, 2-Front",
                             EngineStyle = "4-Stroke Twin Boxer",
                             Hp = "0",
@@ -859,10 +862,6 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Language")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -883,7 +882,6 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Language = "C# Maui",
                             Name = "MauiTodos",
                             ProjectPhoto = "b",
                             Url = "https://github.com/DontDoThat21/NET7MauiWithSqliteTodos"
@@ -891,7 +889,6 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            Language = "TypeScript, JS, C#",
                             Name = "AngularEmployeeManager",
                             ProjectPhoto = "b",
                             Url = "https://github.com/DontDoThat21/Angular16"
@@ -899,7 +896,6 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            Language = "C#.NET FW",
                             Name = "AngularAPI",
                             ProjectPhoto = "b",
                             Url = "https://github.com/DontDoThat21/WebAPI"
@@ -907,7 +903,6 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 4,
-                            Language = "C#.NET FW",
                             Name = "HotSBot",
                             ProjectPhoto = "b",
                             Url = "https://github.com/DontDoThat21/HotSBot"
@@ -915,55 +910,41 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 5,
-                            Language = "Python 3.11",
-                            Name = "Python Maze",
-                            ProjectPhoto = "b",
-                            Url = "https://github.com/DontDoThat21/PythonMaze"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Language = "Java",
                             Name = "JavaSystemLocker",
                             ProjectPhoto = "b",
                             Url = "https://github.com/DontDoThat21/BenignSystemLockMaven"
                         },
                         new
                         {
-                            Id = 7,
-                            Language = "C#.NET FW",
+                            Id = 6,
                             Name = "WinFormsTodos",
                             ProjectPhoto = "b",
                             Url = "https://github.com/DontDoThat21/NET7WinFormsWithSqliteTodos"
                         },
                         new
                         {
-                            Id = 8,
-                            Language = "C#.NET Core WPF",
+                            Id = 7,
                             Name = "ModernDesignPizzaStore",
                             ProjectPhoto = "b",
                             Url = "https://github.com/DontDoThat21/ModernDesignPizzaStore"
                         },
                         new
                         {
-                            Id = 9,
-                            Language = "C#.NET FW",
+                            Id = 8,
                             Name = "FlickrPhotoSearcher",
                             ProjectPhoto = "b",
                             Url = "https://github.com/DontDoThat21/PhotoSearcherFlickrAPI"
                         },
                         new
                         {
-                            Id = 10,
-                            Language = "C#.NET FW",
+                            Id = 9,
                             Name = "FrameworkWebForms",
                             ProjectPhoto = "b",
                             Url = "https://github.com/DontDoThat21/FrameworkWebForms"
                         },
                         new
                         {
-                            Id = 11,
-                            Language = "C++",
+                            Id = 10,
                             Name = "CppCalculator",
                             ProjectPhoto = "b",
                             Url = "https://github.com/DontDoThat21/TylorTrubCppCalculator"

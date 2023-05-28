@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<Project>
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            Project Name
+        </th>
+        <th>
+            Language
+        </th>
+        <th>
+            Project photo
+        </th>
+        <th>
+            GitHub URL
+        </th>
+    </tr>
+    <tbody>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>
+                    @project.Name
+                </td>
+                <td>
+                    @project.Language
+                </td>
+                <td>
+                    <img src="~/Images/project/@project.ProjectPhoto">
+                </td>
+                <td>
+                    @project.Url
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
