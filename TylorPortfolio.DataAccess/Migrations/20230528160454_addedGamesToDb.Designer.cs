@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TylorTrubPortfolio.DataAccess.Data;
 
@@ -11,9 +12,11 @@ using TylorTrubPortfolio.DataAccess.Data;
 namespace TylorTrubPortfolio.DataAccess.Migrations
 {
     [DbContext(typeof(PortfolioDBContext))]
-    partial class BookStoreDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230528160454_addedGamesToDb")]
+    partial class addedGamesToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -359,13 +362,13 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         {
                             Id = 1,
                             GameName = "Hangman",
-                            Preview = "hangman.png"
+                            Preview = "hangman.jpg"
                         },
                         new
                         {
                             Id = 2,
                             GameName = "Simon Says",
-                            Preview = "simonsays.png"
+                            Preview = "simonsays.jpg"
                         });
                 });
 
@@ -417,7 +420,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            AddDate = new DateTime(2023, 5, 28, 12, 29, 10, 585, DateTimeKind.Local).AddTicks(7795),
+                            AddDate = new DateTime(2023, 5, 28, 12, 4, 54, 667, DateTimeKind.Local).AddTicks(6601),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke V4",
                             Hp = "0",
@@ -431,7 +434,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            AddDate = new DateTime(2023, 5, 28, 12, 29, 10, 585, DateTimeKind.Local).AddTicks(7841),
+                            AddDate = new DateTime(2023, 5, 28, 12, 4, 54, 667, DateTimeKind.Local).AddTicks(6650),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke Supercharged",
                             Hp = "0",
@@ -445,7 +448,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            AddDate = new DateTime(2023, 5, 28, 12, 29, 10, 585, DateTimeKind.Local).AddTicks(7844),
+                            AddDate = new DateTime(2023, 5, 28, 12, 4, 54, 667, DateTimeKind.Local).AddTicks(6653),
                             Brakes = "1-Disc-Rear, 2-Front",
                             EngineStyle = "4-Stroke Twin Boxer",
                             Hp = "0",

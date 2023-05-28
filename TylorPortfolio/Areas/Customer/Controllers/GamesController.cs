@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TylorTrubPortfolio.DataAccess.Repository;
+using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.Areas.Customer.Controllers
@@ -6,9 +8,18 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
     [Area("Customer")]
     public class GamesController : Controller
     {
+        private readonly IUnitOfWork _unitOfWork;
+
+        public GamesController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+
+        }
+
         public IActionResult Index()
         {
-            return View();
+            List<Game> games = _unitOfWork.Games.GetAll().ToList();
+            return View(games);
         }
 
         public IActionResult Hangman()

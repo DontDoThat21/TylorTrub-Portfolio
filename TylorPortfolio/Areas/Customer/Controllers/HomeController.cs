@@ -87,8 +87,6 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
             TempData["success"] = "Cart updated successfully";
 
 
-
-
             return RedirectToAction(nameof(MVCDemo));
         }
 

@@ -2,21 +2,42 @@
     ViewData["Title"] = "Gaming Index";
 }
 
-<h1>Welcome to the gaming section of my portfolio.</h1>
+@model List<Game>
 
-<table class ="table table-bordered table-striped table-dark">
-    <tr>
-        <th>
-            Game
-        </th>
-        <th>
-            Preview
-        </th>
-        <th>
-            Play
-        </th>
-    </tr>
-    <tbody>
+<div class="container text-center">
+    <h1>Welcome to the gaming section of my portfolio.</h1>
 
-    </tbody>
-</table>
+    <table class="table table-bordered table-striped table-dark">
+        <tr>
+            <th>
+                Game
+            </th>
+            <th>
+                Preview
+            </th>
+            <th>
+                Play
+            </th>
+        </tr>
+        <tbody>
+            @foreach (var game in Model)
+            {
+                <tr>
+                    <td>
+                        <b>
+                            @game.GameName
+                        </b>
+                    </td>
+                    <td style="text-align: center;">
+                        <img src="~/Images/games/@game.Preview" class="border-0 rounded">
+                    </td>
+                    <td>
+                        <a asp-controller="Games" asp-action="@game.GameName.Replace(" ", "")">
+                            <i class="bi bi-play-circle-fill"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

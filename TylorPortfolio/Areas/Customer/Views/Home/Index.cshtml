@@ -4,9 +4,6 @@
 
 @model HomeViewModel
 
-<a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Delete">test delkete</a>
-<a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">test index</a>
-
 <div class="container text-center">
     <div class="card">
         <h3 class="display-4 card-header">Hello, my name is Tylor C. Trub.</h3>
@@ -59,11 +56,11 @@
         else // odd
         {
             <div class="row">
-                <div class="col-3" style="border:double 1px green">
+                <div class="col-3">
                 </div>
-                <div class="col-3" style="border:double 1px blue">
+                <div class="col-3">
                 </div>
-                <div class="col-6" style="border:double 1px red">
+                <div class="col-6">
                     <p style="float: right">
                         @Model.PortfolioImageList[i].DisplayText
                     </p>
@@ -80,5 +77,3 @@
         }
     } 
 </div>
-
-THE END
