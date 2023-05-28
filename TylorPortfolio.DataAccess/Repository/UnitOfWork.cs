@@ -19,10 +19,11 @@ namespace TylorTrubPortfolio.DataAccess.Repository
         public IMotorcycleVideosRepository MotorcycleVideos { get; private set; }
         public IPortfolioImagesRepository PortfolioImages { get; private set; }
         public ICompanyRepository Company { get; private set; }
+        public IGamesRepository Games { get; private set; }
 
-        public UnitOfWork(PortfolioDBContext bookDb)
+        public UnitOfWork(PortfolioDBContext portfolioDb)
         { 
-            _portfolioDBContext = bookDb;
+            _portfolioDBContext = portfolioDb;
 
             Category = new CategoryRepository(_portfolioDBContext);
             Product = new ProductRepository(_portfolioDBContext);
@@ -32,6 +33,7 @@ namespace TylorTrubPortfolio.DataAccess.Repository
             MotorcycleVideos = new MotorcycleVideosRepository(_portfolioDBContext);
             PortfolioImages = new PortfolioImageRepository(_portfolioDBContext);
             Company = new CompanyRepository(_portfolioDBContext);
+            Games = new GamesRepository(_portfolioDBContext);
 
         }
 
