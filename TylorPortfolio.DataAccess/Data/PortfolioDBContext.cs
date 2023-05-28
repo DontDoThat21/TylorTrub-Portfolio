@@ -25,6 +25,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
         public DbSet<ShoppingCart> ShoppingCarts{ get; set; }
         public DbSet<ApplicationUser> applicationUsers { get; set; }
         public DbSet<Game> Games { get; set; }
+        public DbSet<Project> Projects { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -495,6 +496,62 @@ namespace TylorTrubPortfolio.DataAccess.Data
 
             modelBuilder.Entity<Game>().HasData(
                 new Game { Id = 2, GameName = "Simon Says", Preview = "simonsays.png" });
+
+            modelBuilder.Entity<Project>().HasData(
+                new Project {
+                    Id = 1, Name = "MauiTodos", Language = "C# Maui", Url = "https://github.com/DontDoThat21/NET7MauiWithSqliteTodos", ProjectPhoto = "b"
+                });
+            
+            modelBuilder.Entity<Project>().HasData(
+                new Project {
+                    Id = 2, Name = "AngularEmployeeManager", Language = "TypeScript, JS, C#", Url = "https://github.com/DontDoThat21/Angular16", ProjectPhoto = "b"
+                });
+            
+            modelBuilder.Entity<Project>().HasData(
+                new Project {
+                    Id = 3, Name = "AngularAPI", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/WebAPI", ProjectPhoto = "b"
+                });
+            
+            modelBuilder.Entity<Project>().HasData(
+                new Project {
+                    Id = 4, Name = "HotSBot", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/HotSBot", ProjectPhoto = "b"
+                });
+            
+            modelBuilder.Entity<Project>().HasData(
+                new Project {
+                    Id = 5, Name = "Python Maze", Language = "Python 3.11", Url = "https://github.com/DontDoThat21/PythonMaze", ProjectPhoto = "b"
+                });
+            
+            modelBuilder.Entity<Project>().HasData(
+                new Project {
+                    Id = 6, Name = "JavaSystemLocker", Language = "Java", Url = "https://github.com/DontDoThat21/BenignSystemLockMaven", ProjectPhoto = "b"
+                });
+            
+            modelBuilder.Entity<Project>().HasData(
+                new Project {
+                    Id = 7, Name = "WinFormsTodos", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/NET7WinFormsWithSqliteTodos", ProjectPhoto = "b"
+                });
+            
+            modelBuilder.Entity<Project>().HasData(
+                new Project {
+                    Id = 8, Name = "ModernDesignPizzaStore", Language = "C#.NET Core WPF", Url = "https://github.com/DontDoThat21/ModernDesignPizzaStore", ProjectPhoto = "b"
+                });
+            
+            modelBuilder.Entity<Project>().HasData(
+                new Project {
+                    Id = 9, Name = "FlickrPhotoSearcher", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/PhotoSearcherFlickrAPI", ProjectPhoto = "b"
+                });
+            
+            modelBuilder.Entity<Project>().HasData(
+                new Project {
+                    Id = 10, Name = "FrameworkWebForms", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/FrameworkWebForms", ProjectPhoto = "b"
+                });
+            
+            modelBuilder.Entity<Project>().HasData(
+                new Project {
+                    Id = 11, Name = "CppCalculator", Language = "C++", Url = "https://github.com/DontDoThat21/TylorTrubCppCalculator", ProjectPhoto = "b"
+                });
+
         }
 
     }

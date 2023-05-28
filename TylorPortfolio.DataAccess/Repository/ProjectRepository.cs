@@ -10,18 +10,18 @@ using TylorTrubPortfolio.Models;
 
 namespace TylorTrubPortfolio.DataAccess.Repository
 {
-    public class GamesRepository : Repository<Game>, IGamesRepository
+    public class ProjectRepository : Repository<Project>, IProjectRepository
     {
         private PortfolioDBContext _db;
 
-        public GamesRepository(PortfolioDBContext db) : base(db)
+        public ProjectRepository(PortfolioDBContext db) : base(db)
         {
             _db = db;
         }
 
-        public void Update(Game obj)
+        public void Update(Project obj)
         {
-            _db.Games.Update(obj);
+            _db.Projects.Update(obj);
         }
     }
 }

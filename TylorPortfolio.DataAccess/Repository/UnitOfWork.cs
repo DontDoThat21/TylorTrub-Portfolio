@@ -20,6 +20,7 @@ namespace TylorTrubPortfolio.DataAccess.Repository
         public IPortfolioImagesRepository PortfolioImages { get; private set; }
         public ICompanyRepository Company { get; private set; }
         public IGamesRepository Games { get; private set; }
+        public IProjectRepository Projects { get; private set; }
 
         public UnitOfWork(PortfolioDBContext portfolioDb)
         { 
@@ -33,7 +34,8 @@ namespace TylorTrubPortfolio.DataAccess.Repository
             MotorcycleVideos = new MotorcycleVideosRepository(_portfolioDBContext);
             PortfolioImages = new PortfolioImageRepository(_portfolioDBContext);
             Company = new CompanyRepository(_portfolioDBContext);
-            Games = new GamesRepository(_portfolioDBContext);
+            Games = new GameRepository(_portfolioDBContext);
+            Projects = new ProjectRepository(_portfolioDBContext);
 
         }
 
