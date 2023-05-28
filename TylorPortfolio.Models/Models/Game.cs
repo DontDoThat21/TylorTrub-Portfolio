@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TylorTrubPortfolio.Models
 {
-    public class Games
+    public class Game
     {
         [Key]
         [DisplayName("Game Id")]
