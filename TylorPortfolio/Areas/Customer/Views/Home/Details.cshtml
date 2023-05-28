@@ -5,6 +5,7 @@
 @model ShoppingCart
 
 <form method="post">
+    <input hidden asp-for="ProductId" />
     <div class="card shadow border-0 mt-4 mb-4">
         <div class="card-header bg-secondary bg-gradient text-light py-4">
             <div class="row">
@@ -33,10 +34,10 @@
                             <span class="badge">@Model.Product.Category.Name</span>
                         </div>
                         <div class="row ps-2">
-                            <h6 class="text-dark text-opacity-50 ">ISBN : ISBN</h6>
+                            <h6 class="text-opacity-50 ">ISBN : ISBN</h6>
                         </div>
                         <div class="row ps-2">
-                            <h6 class="text-dark text-opacity-50  pb-2">
+                            <h6 class="text-opacity-50  pb-2">
                                 List Price:
                                 <span class="text-decoration-line-through">
                                     @Model.Product.ListPrice.ToString("c")
@@ -44,30 +45,30 @@
                             </h6>
                         </div>
                         <div class="row text-center ps-2">
-                            <div class="p-1 col-3 col-lg-2 bg-white border-bottom">
-                                <div class="text-dark text-opacity-50 fw-semibold">Quantity</div>
+                            <div class="p-1 col-3 col-lg-2 bg-primary border-bottom">
+                                <div class="text-opacity-50 fw-semibold">Quantity</div>
                             </div>
-                            <div class="p-1 col-3 col-lg-2 bg-white border-bottom">
-                                <div class="text-dark text-opacity-50 fw-semibold">1-50</div>
+                            <div class="p-1 col-3 col-lg-2 bg-primary border-bottom">
+                                <div class="text-opacity-50 fw-semibold">1-50</div>
                             </div>
-                            <div class="p-1 col-3 col-lg-2 bg-white border-bottom">
-                                <div class="text-dark text-opacity-50 fw-semibold">51-100</div>
+                            <div class="p-1 col-3 col-lg-2 bg-primary border-bottom">
+                                <div class="text-opacity-50 fw-semibold">51-100</div>
                             </div>
-                            <div class="p-1 col-3 col-lg-2 bg-white border-bottom">
-                                <div class="text-dark text-opacity-50 fw-semibold">100+</div>
+                            <div class="p-1 col-3 col-lg-2 bg-primary border-bottom">
+                                <div class="text-opacity-50 fw-semibold">100+</div>
                             </div>
                         </div>
                         <div class="row text-center ps-2">
-                            <div class="p-1 col-3 col-lg-2 bg-white text-warning fw-bold">
+                            <div class="p-1 col-3 col-lg-2 bg-primary text-warning fw-bold">
                                 <div>Price</div>
                             </div>
-                            <div class="p-1 col-3 col-lg-2 bg-white text-warning fw-bold">
+                            <div class="p-1 col-3 col-lg-2 bg-primary text-warning fw-bold">
                                 <div>@Model.Product.Price.ToString("c")</div>
                             </div>
-                            <div class="p-1 col-3 col-lg-2 bg-white text-warning fw-bold">
+                            <div class="p-1 col-3 col-lg-2 bg-primary text-warning fw-bold">
                                 <div>@Model.Product.Price50.ToString("c")</div>
                             </div>
-                            <div class="p-1 col-3 col-lg-2 bg-white text-warning fw-bold">
+                            <div class="p-1 col-3 col-lg-2 bg-primary text-warning fw-bold">
                                 <div>@Model.Product.Price100.ToString("c")</div>
                             </div>
                         </div>

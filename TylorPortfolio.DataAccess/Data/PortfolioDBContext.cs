@@ -13,7 +13,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
 
         public PortfolioDBContext(DbContextOptions<PortfolioDBContext> options) : base(options) 
         {
-
+            
         }
 
         public DbSet<Category> Categories { get; set; }

@@ -8,6 +8,11 @@
     box-shadow: 0 -2px;
 }
 
+.badge {
+    background-color: rgba(189, 116, 24, 0.6);
+    color: white;
+}
+
 html {
   font-size: 14px;
 }
