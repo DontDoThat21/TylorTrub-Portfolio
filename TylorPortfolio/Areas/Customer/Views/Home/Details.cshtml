@@ -1,8 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Product Details";
-}
-
-@model ShoppingCart
+﻿@model ShoppingCart
 
 <form method="post">
     <input hidden asp-for="ProductId" />
@@ -11,7 +7,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <h3 class="text-white text-uppercase">@Model.Product.Title</h3>
-                    <p class="text-white-50 fw-semibold mb-0">by Author @Model.Product.Author</p>
+                    <p class="text-white-50 fw-semibold mb-0">by @Model.Product.Author</p>
                 </div>
             </div>
         </div>
@@ -19,14 +15,60 @@
             <div class="py-3">
                 <div class="row">
                     <div class="col-6 col-md-2 offset-lg-1 pb-1">
-                        <a asp-action="MVCDemo" class="btn btn-outline-primary bg-gradient mb-5 fw-semibold btn-sm text-uppercase">
+                        <a asp-action="Index" class="btn btn-outline-primary bg-gradient mb-5 fw-semibold btn-sm text-uppercase">
                             <small>Back to home</small>
                         </a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-lg-3 offset-lg-1 text-center mb-3">
-                        <img src="@Model.Product.ImageUrl" width="100%" class="rounded" />
+
+
+
+                        @if (Model.Product.ProductImages != null && Model.Product.ProductImages.Count > 0)
+                        {
+                            <div id="carouselExampleIndicators" class="carousel  slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+
+                                    @foreach (var imageWithIndex in
+                                   Model.Product.ProductImages
+                                   .Select((image, index) => new { Image = image, Index = index }))
+                                    {
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="@imageWithIndex.Index"
+                                                class="@(imageWithIndex.Index==0?"active":"")" aria-current="true" aria-label="Slide 1"></button>
+                                    }
+
+
+                                </div>
+                                <div class="carousel-inner">
+                                    @foreach (var imageWithIndex in
+                                   Model.Product.ProductImages
+                                   .Select((image, index) => new { Image = image, Index = index }))
+                                    {
+                                        <div class="@(imageWithIndex.Index==0?"carousel-item active":"carousel-item")">
+                                            <img src="@imageWithIndex.Image.ImageUrl" class="d-block w-100" alt="...">
+                                        </div>
+                                    }
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+
+                        }
+
+
+
+
+
+
+
+
                     </div>
                     <div class="col-12 col-lg-6 offset-lg-1">
 
@@ -34,10 +76,10 @@
                             <span class="badge">@Model.Product.Category.Name</span>
                         </div>
                         <div class="row ps-2">
-                            <h6 class="text-opacity-50 ">ISBN : ISBN</h6>
+                            <h6 class="text-dark text-opacity-50 ">ISBN : @Model.Product.ISBN</h6>
                         </div>
                         <div class="row ps-2">
-                            <h6 class="text-opacity-50  pb-2">
+                            <h6 class="text-dark text-opacity-50  pb-2">
                                 List Price:
                                 <span class="text-decoration-line-through">
                                     @Model.Product.ListPrice.ToString("c")
@@ -45,30 +87,30 @@
                             </h6>
                         </div>
                         <div class="row text-center ps-2">
-                            <div class="p-1 col-3 col-lg-2 bg-primary border-bottom">
-                                <div class="text-opacity-50 fw-semibold">Quantity</div>
+                            <div class="p-1 col-3 col-lg-2 bg-white border-bottom">
+                                <div class="text-dark text-opacity-50 fw-semibold">Quantity</div>
                             </div>
-                            <div class="p-1 col-3 col-lg-2 bg-primary border-bottom">
-                                <div class="text-opacity-50 fw-semibold">1-50</div>
+                            <div class="p-1 col-3 col-lg-2 bg-white border-bottom">
+                                <div class="text-dark text-opacity-50 fw-semibold">1-50</div>
                             </div>
-                            <div class="p-1 col-3 col-lg-2 bg-primary border-bottom">
-                                <div class="text-opacity-50 fw-semibold">51-100</div>
+                            <div class="p-1 col-3 col-lg-2 bg-white border-bottom">
+                                <div class="text-dark text-opacity-50 fw-semibold">51-100</div>
                             </div>
-                            <div class="p-1 col-3 col-lg-2 bg-primary border-bottom">
-                                <div class="text-opacity-50 fw-semibold">100+</div>
+                            <div class="p-1 col-3 col-lg-2 bg-white border-bottom">
+                                <div class="text-dark text-opacity-50 fw-semibold">100+</div>
                             </div>
                         </div>
                         <div class="row text-center ps-2">
-                            <div class="p-1 col-3 col-lg-2 bg-primary text-warning fw-bold">
+                            <div class="p-1 col-3 col-lg-2 bg-white text-warning fw-bold">
                                 <div>Price</div>
                             </div>
-                            <div class="p-1 col-3 col-lg-2 bg-primary text-warning fw-bold">
+                            <div class="p-1 col-3 col-lg-2 bg-white text-warning fw-bold">
                                 <div>@Model.Product.Price.ToString("c")</div>
                             </div>
-                            <div class="p-1 col-3 col-lg-2 bg-primary text-warning fw-bold">
+                            <div class="p-1 col-3 col-lg-2 bg-white text-warning fw-bold">
                                 <div>@Model.Product.Price50.ToString("c")</div>
                             </div>
-                            <div class="p-1 col-3 col-lg-2 bg-primary text-warning fw-bold">
+                            <div class="p-1 col-3 col-lg-2 bg-white text-warning fw-bold">
                                 <div>@Model.Product.Price100.ToString("c")</div>
                             </div>
                         </div>

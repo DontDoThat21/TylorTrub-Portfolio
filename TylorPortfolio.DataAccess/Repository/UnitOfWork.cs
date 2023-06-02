@@ -18,8 +18,11 @@ namespace TylorTrubPortfolio.DataAccess.Repository
         public IApplicationUserRepository ApplicationUser { get; private set; }
         public IMotorcycleVideosRepository MotorcycleVideos { get; private set; }
         public IPortfolioImagesRepository PortfolioImages { get; private set; }
+        public IProductImageRepository ProductImages { get; private set; }
         public ICompanyRepository Company { get; private set; }
         public IGamesRepository Games { get; private set; }
+        public IOrderHeaderRepository OrderHeader { get; private set; }
+        public IOrderDetailRepository OrderDetail { get; private set; }
         public IProjectRepository Projects { get; private set; }
 
         public UnitOfWork(PortfolioDBContext portfolioDb)
@@ -36,6 +39,9 @@ namespace TylorTrubPortfolio.DataAccess.Repository
             Company = new CompanyRepository(_portfolioDBContext);
             Games = new GameRepository(_portfolioDBContext);
             Projects = new ProjectRepository(_portfolioDBContext);
+            OrderHeader = new OrderHeaderRepository(_portfolioDBContext);
+            OrderDetail = new OrderDetailRepository(_portfolioDBContext);
+            ProductImages = new ProductImageRepository(_portfolioDBContext);
 
         }
 
