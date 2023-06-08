@@ -126,7 +126,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 
         public IActionResult DeleteImage(int imageId)
         {
-            var imageToBeDeleted = _unitOfWork.ProductImages.Get(u => u.Id == imageId);
+            var imageToBeDeleted = _unitOfWork.ProductImage.Get(u => u.Id == imageId);
             int productId = imageToBeDeleted.ProductId;
             if (imageToBeDeleted != null)
             {
@@ -142,7 +142,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                     }
                 }
 
-                _unitOfWork.ProductImages.Remove(imageToBeDeleted);
+                _unitOfWork.ProductImage.Remove(imageToBeDeleted);
                 _unitOfWork.Save();
 
                 TempData["success"] = "Deleted successfully";

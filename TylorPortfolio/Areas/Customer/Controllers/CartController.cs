@@ -37,7 +37,7 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
                 OrderHeader = new()
             };
 
-            IEnumerable<ProductImage> productImages = _unitOfWork.ProductImages.GetAll();
+            IEnumerable<ProductImage> productImages = _unitOfWork.ProductImage.GetAll();
 
             foreach (var cart in ShoppingCartVM.ShoppingCartList)
             {
