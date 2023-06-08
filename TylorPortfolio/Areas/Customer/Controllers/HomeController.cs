@@ -7,6 +7,7 @@ using TylorTrubPortfolio.DataAccess.Data;
 using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 using TylorTrubPortfolio.Models;
 using TylorTrubPortfolio.Models.ViewModels;
+using TylorTrubPortfolio.Utility;
 
 namespace TylorTrubPortfolio.Areas.Customer.Controllers
 {
@@ -37,6 +38,15 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
 
         public IActionResult MVCDemo()
         {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+            if (claim.Value != null)
+            {
+                HttpContext.Session.SetInt32(SD.SessionCart,
+                    _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == claim.Value).Count());
+            }
+
             IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category,ProductImages");
             return View(productList);
         }
@@ -77,7 +87,8 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
             else
             {
                 //add cart record
-                _unitOfWork.ShoppingCart.Add(shoppingCart);
+                _unitOfWork.ShoppingCart.Add(shoppingCart);                
+
                 try
                 {
                     _unitOfWork.Save();
@@ -89,6 +100,8 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
                     _unitOfWork.Save();
 
                 }
+                HttpContext.Session.SetInt32(SD.SessionCart,
+                    _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId).Count());
             }
             _context.Database.CloseConnection();
             TempData["success"] = "Cart updated successfully";

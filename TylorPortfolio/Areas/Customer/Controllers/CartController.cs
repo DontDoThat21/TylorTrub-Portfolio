@@ -246,7 +246,7 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
 
             HttpContext.Session.SetInt32(SD.SessionCart, _unitOfWork.ShoppingCart
               .GetAll(u => u.ApplicationUserId == cartFromDb.ApplicationUserId).Count() - 1);
-            _unitOfWork.Save();
+            _unitOfWork.Save(); 
             return RedirectToAction(nameof(Index));
         }
 
