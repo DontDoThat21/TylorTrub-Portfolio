@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TylorTrubPortfolio.DataAccess.Data;
 
@@ -11,9 +12,11 @@ using TylorTrubPortfolio.DataAccess.Data;
 namespace TylorTrubPortfolio.DataAccess.Migrations
 {
     [DbContext(typeof(PortfolioDBContext))]
-    partial class BookStoreDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230608213154_fixedProjectSeeds2")]
+    partial class fixedProjectSeeds2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -417,7 +420,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            AddDate = new DateTime(2023, 6, 8, 17, 58, 30, 446, DateTimeKind.Local).AddTicks(9534),
+                            AddDate = new DateTime(2023, 6, 8, 17, 31, 54, 729, DateTimeKind.Local).AddTicks(7328),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke V4",
                             Hp = "0",
@@ -431,7 +434,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            AddDate = new DateTime(2023, 6, 8, 17, 58, 30, 446, DateTimeKind.Local).AddTicks(9579),
+                            AddDate = new DateTime(2023, 6, 8, 17, 31, 54, 729, DateTimeKind.Local).AddTicks(7372),
                             Brakes = "Brembo",
                             EngineStyle = "Four Stroke Supercharged",
                             Hp = "0",
@@ -445,7 +448,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            AddDate = new DateTime(2023, 6, 8, 17, 58, 30, 446, DateTimeKind.Local).AddTicks(9582),
+                            AddDate = new DateTime(2023, 6, 8, 17, 31, 54, 729, DateTimeKind.Local).AddTicks(7375),
                             Brakes = "1-Disc-Rear, 2-Front",
                             EngineStyle = "4-Stroke Twin Boxer",
                             Hp = "0",
@@ -1002,7 +1005,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                             Id = 1,
                             Language = "C# Maui",
                             Name = "MauiTodos",
-                            ProjectPhoto = "mauiTodos.png",
+                            ProjectPhoto = "mauiTodos",
                             Url = "https://github.com/DontDoThat21/NET7MauiWithSqliteTodos"
                         },
                         new
@@ -1010,7 +1013,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                             Id = 2,
                             Language = "TypeScript, JS, C#",
                             Name = "AngularEmployeeManager",
-                            ProjectPhoto = "angularEmployeeManager.png",
+                            ProjectPhoto = "angularEmployeeManager",
                             Url = "https://github.com/DontDoThat21/Angular16"
                         },
                         new
@@ -1018,7 +1021,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                             Id = 3,
                             Language = "C#.NET FW",
                             Name = "AngularAPI",
-                            ProjectPhoto = "angularEmployeeDepartmentAPI.png",
+                            ProjectPhoto = "angularEmployeeDepartmentAPI",
                             Url = "https://github.com/DontDoThat21/WebAPI"
                         },
                         new
@@ -1026,7 +1029,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                             Id = 4,
                             Language = "C#.NET FW",
                             Name = "HotSBot",
-                            ProjectPhoto = "hotsBot.png",
+                            ProjectPhoto = "hotsBot",
                             Url = "https://github.com/DontDoThat21/HotSBot"
                         },
                         new
@@ -1034,7 +1037,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                             Id = 5,
                             Language = "Python 3.11",
                             Name = "Python Maze",
-                            ProjectPhoto = "pythonMaze.png",
+                            ProjectPhoto = "pythonMaze",
                             Url = "https://github.com/DontDoThat21/PythonMaze"
                         },
                         new
@@ -1042,7 +1045,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                             Id = 6,
                             Language = "C#.NET FW",
                             Name = "WinFormsTodos",
-                            ProjectPhoto = "net7WinFormsSqlLiteTodos.png",
+                            ProjectPhoto = "net7WinFormsSqlLiteTodos",
                             Url = "https://github.com/DontDoThat21/NET7WinFormsWithSqliteTodos"
                         },
                         new
@@ -1050,7 +1053,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                             Id = 7,
                             Language = "C#.NET Core WPF",
                             Name = "ModernDesignPizzaStore",
-                            ProjectPhoto = "net7ModernWpf.png",
+                            ProjectPhoto = "net7ModernWpf",
                             Url = "https://github.com/DontDoThat21/ModernDesignPizzaStore"
                         },
                         new
@@ -1058,7 +1061,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                             Id = 8,
                             Language = "C#.NET FW",
                             Name = "FlickrPhotoSearcher",
-                            ProjectPhoto = "b.png",
+                            ProjectPhoto = "b",
                             Url = "https://github.com/DontDoThat21/PhotoSearcherFlickrAPI"
                         },
                         new
@@ -1066,7 +1069,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                             Id = 9,
                             Language = "C#.NET FW",
                             Name = "FrameworkWebForms",
-                            ProjectPhoto = "b.png",
+                            ProjectPhoto = "b",
                             Url = "https://github.com/DontDoThat21/FrameworkWebForms"
                         },
                         new
@@ -1074,7 +1077,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                             Id = 10,
                             Language = "C++",
                             Name = "CppCalculator",
-                            ProjectPhoto = "cppCalculator.png",
+                            ProjectPhoto = "cppCalculator",
                             Url = "https://github.com/DontDoThat21/TylorTrubCppCalculator"
                         });
                 });
