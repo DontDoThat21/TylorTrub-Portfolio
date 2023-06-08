@@ -34,7 +34,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\net8.0\" />
     <Folder Include="wwwroot\Images\games\" />
-    <Folder Include="wwwroot\Images\project\" />
   </ItemGroup>
 
   <ItemGroup>
