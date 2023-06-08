@@ -78,11 +78,18 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
             {
                 //add cart record
                 _unitOfWork.ShoppingCart.Add(shoppingCart);
-                _unitOfWork.Save();
-                //HttpContext.Session.SetInt32(SD.SessionCart,
-                //_unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId).Count());
+                try
+                {
+                    _unitOfWork.Save();
+
+                }
+                catch (Exception)
+                {
+                    _context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT dbo.ShoppingCarts OFF");
+                    _unitOfWork.Save();
+
+                }
             }
-            _context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT dbo.ShoppingCarts OFF");
             _context.Database.CloseConnection();
             TempData["success"] = "Cart updated successfully";
 
