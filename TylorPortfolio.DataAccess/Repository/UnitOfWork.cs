@@ -18,7 +18,7 @@ namespace TylorTrubPortfolio.DataAccess.Repository
         public IApplicationUserRepository ApplicationUser { get; private set; }
         public IMotorcycleVideosRepository MotorcycleVideos { get; private set; }
         public IPortfolioImagesRepository PortfolioImages { get; private set; }
-        public IProductImageRepository ProductImages { get; private set; }
+        public IProductImageRepository ProductImage { get; private set; }
         public ICompanyRepository Company { get; private set; }
         public IGamesRepository Games { get; private set; }
         public IOrderHeaderRepository OrderHeader { get; private set; }
@@ -41,7 +41,7 @@ namespace TylorTrubPortfolio.DataAccess.Repository
             Projects = new ProjectRepository(_portfolioDBContext);
             OrderHeader = new OrderHeaderRepository(_portfolioDBContext);
             OrderDetail = new OrderDetailRepository(_portfolioDBContext);
-            ProductImages = new ProductImageRepository(_portfolioDBContext);
+            ProductImage = new ProductImageRepository(_portfolioDBContext);
 
         }
 
