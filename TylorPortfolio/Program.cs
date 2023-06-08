@@ -7,8 +7,6 @@ using TylorTrubPortfolio.Utility;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Stripe;
 
-// ignore
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
