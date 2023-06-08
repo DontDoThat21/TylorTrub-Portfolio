@@ -499,52 +499,52 @@ namespace TylorTrubPortfolio.DataAccess.Data
 
             modelBuilder.Entity<Project>().HasData(
                 new Project {
-                    Id = 1, Name = "MauiTodos", Language = "C# Maui", Url = "https://github.com/DontDoThat21/NET7MauiWithSqliteTodos", ProjectPhoto = "mauiTodos"
+                    Id = 1, Name = "MauiTodos", Language = "C# Maui", Url = "https://github.com/DontDoThat21/NET7MauiWithSqliteTodos", ProjectPhoto = "mauiTodos.png"
                 });
             
             modelBuilder.Entity<Project>().HasData(
                 new Project {
-                    Id = 2, Name = "AngularEmployeeManager", Language = "TypeScript, JS, C#", Url = "https://github.com/DontDoThat21/Angular16", ProjectPhoto = "angularEmployeeManager"
+                    Id = 2, Name = "AngularEmployeeManager", Language = "TypeScript, JS, C#", Url = "https://github.com/DontDoThat21/Angular16", ProjectPhoto = "angularEmployeeManager.png"
                 });
             
             modelBuilder.Entity<Project>().HasData(
                 new Project {
-                    Id = 3, Name = "AngularAPI", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/WebAPI", ProjectPhoto = "angularEmployeeDepartmentAPI"
+                    Id = 3, Name = "AngularAPI", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/WebAPI", ProjectPhoto = "angularEmployeeDepartmentAPI.png"
                 });
             
             modelBuilder.Entity<Project>().HasData(
                 new Project {
-                    Id = 4, Name = "HotSBot", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/HotSBot", ProjectPhoto = "hotsBot"
+                    Id = 4, Name = "HotSBot", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/HotSBot", ProjectPhoto = "hotsBot.png"
                 });
             
             modelBuilder.Entity<Project>().HasData(
                 new Project {
-                    Id = 5, Name = "Python Maze", Language = "Python 3.11", Url = "https://github.com/DontDoThat21/PythonMaze", ProjectPhoto = "pythonMaze"
+                    Id = 5, Name = "Python Maze", Language = "Python 3.11", Url = "https://github.com/DontDoThat21/PythonMaze", ProjectPhoto = "pythonMaze.png"
                 });
             
             modelBuilder.Entity<Project>().HasData(
                 new Project {
-                    Id = 6, Name = "WinFormsTodos", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/NET7WinFormsWithSqliteTodos", ProjectPhoto = "net7WinFormsSqlLiteTodos"
+                    Id = 6, Name = "WinFormsTodos", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/NET7WinFormsWithSqliteTodos", ProjectPhoto = "net7WinFormsSqlLiteTodos.png"
                 });
             
             modelBuilder.Entity<Project>().HasData(
                 new Project {
-                    Id = 7, Name = "ModernDesignPizzaStore", Language = "C#.NET Core WPF", Url = "https://github.com/DontDoThat21/ModernDesignPizzaStore", ProjectPhoto = "net7ModernWpf"
+                    Id = 7, Name = "ModernDesignPizzaStore", Language = "C#.NET Core WPF", Url = "https://github.com/DontDoThat21/ModernDesignPizzaStore", ProjectPhoto = "net7ModernWpf.png"
                 });
             
             modelBuilder.Entity<Project>().HasData(
                 new Project {
-                    Id = 8, Name = "FlickrPhotoSearcher", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/PhotoSearcherFlickrAPI", ProjectPhoto = "b"
+                    Id = 8, Name = "FlickrPhotoSearcher", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/PhotoSearcherFlickrAPI", ProjectPhoto = "b.png"
                 });
             
             modelBuilder.Entity<Project>().HasData(
                 new Project {
-                    Id = 9, Name = "FrameworkWebForms", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/FrameworkWebForms", ProjectPhoto = "b"
+                    Id = 9, Name = "FrameworkWebForms", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/FrameworkWebForms", ProjectPhoto = "b.png"
                 });
             
             modelBuilder.Entity<Project>().HasData(
                 new Project {
-                    Id = 10, Name = "CppCalculator", Language = "C++", Url = "https://github.com/DontDoThat21/TylorTrubCppCalculator", ProjectPhoto = "cppCalculator"
+                    Id = 10, Name = "CppCalculator", Language = "C++", Url = "https://github.com/DontDoThat21/TylorTrubCppCalculator", ProjectPhoto = "cppCalculator.png"
                 });
 
         }
