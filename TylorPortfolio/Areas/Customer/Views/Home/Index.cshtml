@@ -96,7 +96,11 @@
                 <div class="col-6"></div>
                 <div class="col-6" >
                     <br>
-                    <img src="~/Images/home/lineTopRightBottomLeftWavy.png" class="img-fluid border-0 rounded">
+                    @if (!(i == Model.PortfolioImageList.Count))
+                    {
+                        <img src="~/Images/home/lineTopRightBottomLeftWavy.png" class="img-fluid border-0 rounded">
+
+                    }
 
                 </div>
             </div>
