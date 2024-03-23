@@ -4,7 +4,6 @@ using TylorTrubPortfolio.DataAccess.Repository;
 using TylorTrubPortfolio.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Identity;
 using TylorTrubPortfolio.Utility;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
