@@ -34,7 +34,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Available 8am EST to 5pm EST. <a href="mailto:tylortrub@gmail.com">tylortrub@gmail.com
+                            Available 8am to 5pm EST. <a href="mailto:tylortrub@gmail.com">tylortrub@gmail.com
                         </td>
                     </tr>
                 </tbody>
@@ -42,7 +42,7 @@
 
             <h2 class="text-center">
                 <a asp-controller="Home" asp-action="MVCDemo">
-                    Check out my latest MVC .NET 8 (still preview 5/27) project!
+                    Check out my latest MVC .NET 8 (still preview 5/27/23) project!
                 </a>
             </h2>
         </div>        
@@ -96,11 +96,10 @@
                 <div class="col-6"></div>
                 <div class="col-6" >
                     <br>
-                    @if (!(i == Model.PortfolioImageList.Count))
+                    @if (!(i+1 == Model.PortfolioImageList.Count))
                     {
                         <img src="~/Images/home/lineTopRightBottomLeftWavy.png" class="img-fluid border-0 rounded">
                     }
-
                 </div>
             </div>
         }
