@@ -32,13 +32,7 @@
                         <li class="nav-item">
                         <li class="nav-seperator">
                             |
-                        </li>
-                        <li>
-                            <a class="nav-link" asp-area="Admin" asp-controller="Order" asp-action="Index">Manage Order</a>
-                        </li>
-                        <li class="nav-seperator">
-                            |
-                        </li>
+                        </li>                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Projects
@@ -123,6 +117,12 @@
                         <li class="nav-seperator">
                             |
                         </li>
+                        <li>
+                            <a class="nav-link" asp-area="Admin" asp-controller="Order" asp-action="Index">Manage Order</a>
+                        </li>
+                        <li class="nav-seperator">
+                            |
+                        </li>
                         @if (HttpContextAccessor.HttpContext.Session.GetInt32(SD.SessionCart) != null)
                         {
                             <li class="nav-item">
@@ -177,12 +177,11 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer bg-primary text-white-50">
-        <div class="container">
-            &copy; 2023 - Tylor's Portfolio - Made with <i class="bi bi-heart-fill"></i> by Tylor Christian Trub
+        <div>
+            &copy; 2024 - Tylor's Portfolio - Made with <i class="bi bi-heart-fill"></i> by Tylor Christian Trub
         </div>
-    </footer>
+    </footer> 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
