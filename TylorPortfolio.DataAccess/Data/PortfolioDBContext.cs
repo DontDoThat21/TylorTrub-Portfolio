@@ -342,7 +342,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 {
                     Id = 14,
                     DisplayText = "Crossing the Upper Peninsula of Michigan on a sport-bike is wild! " +
-                    "The middle connection is grated, leaving you with an intimidating view down! It's worth it just to see all Michigan offers of course.",
+                    "The middle connection is grated, leaving you with an intimidating view looking down! It's worth it just to see all Michigan offers.",
                     FileName = "homedancininseptemba1.jpg",
                     Name = "CA Work Warehouse 1"
                 });
@@ -351,8 +351,8 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 new PortfolioImage
                 {
                     Id = 15,
-                    DisplayText = "I decided to buy a cheap dirk-bike and assemble it from an online store. " +
-                    "Would not recommend! Was underpowered and arrived with problems. Fun though!",
+                    DisplayText = "I decided to buy a dirt-bike and assemble it from Amazon. Seriously. " +
+                    "Would not recommend! Fun building it and ripping around the dunes. One day I'll buy a real YZ250/450f.",
                     FileName = "homedirtbike1.jpg",
                     Name = "Desktop MI AH Bike 2"
                 });
@@ -361,8 +361,8 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 new PortfolioImage
                 {
                     Id = 16,
-                    DisplayText = "Finishing the assembly was a joy, however I ultimately had to replace the carb with a newer custom one. " +
-                    "This increased the BHP by about 10%.",
+                    DisplayText = "Finishing the assembly was a joy, I ultimately replaced the carb with a newer custom higher throughput one. " +
+                    "This noticeably increased the BHP by about 10%.",
                     FileName = "homedirtbike2.jpg",
                     Name = "Desktop MI AH Bike 2"
                 });
@@ -381,7 +381,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 new PortfolioImage
                 {
                     Id = 18,
-                    DisplayText = "Gaming is in my blood! As a kid, I started programming back end software with a title named Garry's Mod. " +
+                    DisplayText = "Gaming is in my blood! As a kid, I started getting into heavy back end programming with a title named Garry's Mod. " +
                     "Research TTT and look up WITD Server if curious!",
                     FileName = "homegaming1.jpg",
                     Name = "Gaming MI Halo 1"
@@ -391,9 +391,9 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 new PortfolioImage
                 {
                     Id = 19,
-                    DisplayText = "StarCraft is my favorite game! It requires so much attention, and intense multi tasking proficiency. " +
-                    "Something I consider myself skilled at, I love StarCraft even though some consider it too difficult to learn. " +
-                    "Life is about mastering difficult things anyways!",
+                    DisplayText = "StarCraft is my favorite game! It requires so much attention, and intense, quick multi-tasking proficiencies under stress. " +
+                    "Something I consider myself skilled at, I love StarCraft even though some consider it too difficult to learn with all the casual titles out these days. " +
+                    "Life is about mastering difficult things!",
                     FileName = "homegamingsc1.jpg",
                     Name = "Gaming MI Cuddles SC2 1"
                 });
@@ -402,7 +402,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 new PortfolioImage
                 {
                     Id = 20,
-                    DisplayText = "Nothing like winding down with a beverage and some Dark Souls III. " +
+                    DisplayText = "Nothing like winding down with a beverage and some Dark Souls. " +
                     "Most challenging title I've every played with a controller by far! Dex builds know what's up!",
                     FileName = "homebikegaming3.jpg",
                     Name = "Gaming MI Dark Souls 1"
@@ -413,7 +413,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 {
                     Id = 21,
                     DisplayText = "I used to take the scenic routes of Detroit after work, and just enjoy the sky. " +
-                    "Nothing like the smell of the Earth's Petrichor into a pleasant ride around town. Sure makes wheelies scary though!",
+                    "Nothing like the smell of the Earth's petrichor into a pleasant ride around town. Sure makes wheelies risky though!",
                     FileName = "homebikejoslyn1.jpg",
                     Name = "Motorcycling MI Joslyn 1"
                 });
@@ -432,8 +432,8 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 new PortfolioImage
                 {
                     Id = 23,
-                    DisplayText = "I for one, enjoyed the experiences that COVID offered me. More room for motorcycles on the road; " +
-                    "it was a great opportunity to improve my desktop, and enjoy working from home at the same time.",
+                    DisplayText = "I sort of enjoyed the experiences that COVID uniquely offered me. More room for motorcycles on the road; " +
+                    "it was a great opportunity to improve my desktop, and enjoy a more balanced work-life from home at the same time. Win-win.",
                     FileName = "homedesk1.jpg",
                     Name = "Desk MI Signs 1"
                 });
@@ -452,8 +452,8 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 new PortfolioImage
                 {
                     Id = 25,
-                    DisplayText = "I really enjoy playing my guitar when I have time to do so. " +
-                    "One day I am sure I'll have a nice guitar collection! *starts playing dear god by a7x*.",
+                    DisplayText = "I really enjoy playing my guitar when I have the time to do so. " +
+                    "One day I am sure I'll have a legendary guitar collection! *starts playing dear god by a7x*.",
                     FileName = "homeguitarpontiac1.jpg",
                     Name = "Desk MI Signs 1"
                 });
@@ -482,7 +482,7 @@ namespace TylorTrubPortfolio.DataAccess.Data
                 new PortfolioImage
                 {
                     Id = 28,
-                    DisplayText = "The beauty of Michigan is sometimes understated. You truly experience all seasons, and the spring and fall feels " +
+                    DisplayText = "The beauty of Michigan is sometimes understated. You truly experience all seasons; the spring and fall feels " +
                     "like free air conditioning outside! It's great.",
                     FileName = "homemichiganboulevard1.jpg",
                     Name = "Home MI Sky 1"
