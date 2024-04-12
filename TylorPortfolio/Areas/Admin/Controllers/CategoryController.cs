@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using TylorTrubPortfolio.Server.BL.Data;
 using TylorTrubPortfolio.Server.BL.Repository;
 using TylorTrubPortfolio.Server.BL.Repository.IRepository;
-using TylorTrubPortfolio.DTO;
+using TylorTrubPortfolio.DTO.Models;
 using TylorTrubPortfolio.Client.BL;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers

@@ -4,7 +4,7 @@ using Stripe.Checkout;
 using Stripe;
 using System.Security.Claims;
 using TylorTrubPortfolio.Server.BL.Repository.IRepository;
-using TylorTrubPortfolio.DTO;
+using TylorTrubPortfolio.DTO.Models;
 using TylorTrubPortfolio.Client.BL;
 using TylorTrubPortfolio.DTO.ViewModels;
 

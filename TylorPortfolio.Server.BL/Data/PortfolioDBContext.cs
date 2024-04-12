@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Resources;
 using TylorTrubPortfolio.Server.BL.Helpers;
-using TylorTrubPortfolio.DTO;
+using TylorTrubPortfolio.DTO.Models;
 
 namespace TylorTrubPortfolio.Server.BL.Data
 {

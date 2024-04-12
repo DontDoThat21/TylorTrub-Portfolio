@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Stripe.Checkout;
 using System.Security.Claims;
 using TylorTrubPortfolio.Server.BL.Repository.IRepository;
-using TylorTrubPortfolio.DTO;
+using TylorTrubPortfolio.DTO.Models;
 using TylorTrubPortfolio.DTO.ViewModels;
 using TylorTrubPortfolio.Client.BL;
 

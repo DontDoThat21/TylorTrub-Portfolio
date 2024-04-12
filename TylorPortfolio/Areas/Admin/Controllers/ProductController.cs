@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Data;
 using TylorTrubPortfolio.Server.BL.Repository.IRepository;
-using TylorTrubPortfolio.DTO;
+using TylorTrubPortfolio.DTO.Models;
 using TylorTrubPortfolio.DTO.ViewModels;
 using TylorTrubPortfolio.Client.BL;
 

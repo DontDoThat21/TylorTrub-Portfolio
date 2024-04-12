@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TylorTrubPortfolio.Server.BL.Data;
 using TylorTrubPortfolio.Server.BL.Repository.IRepository;
-using TylorTrubPortfolio.DTO;
+using TylorTrubPortfolio.DTO.Models;
 using TylorTrubPortfolio.DTO.ViewModels;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers
