@@ -7,7 +7,7 @@ using TylorTrubPortfolio.Server.BL.Data;
 using TylorTrubPortfolio.Server.BL.Repository.IRepository;
 using TylorTrubPortfolio.DTO;
 using TylorTrubPortfolio.DTO.ViewModels;
-using TylorTrubPortfolio.Utility;
+using TylorTrubPortfolio.Client.BL;
 
 namespace TylorTrubPortfolio.Areas.Customer.Controllers
 {

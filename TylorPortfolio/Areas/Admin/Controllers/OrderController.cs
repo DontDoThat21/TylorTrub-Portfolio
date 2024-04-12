@@ -5,7 +5,7 @@ using Stripe;
 using System.Security.Claims;
 using TylorTrubPortfolio.Server.BL.Repository.IRepository;
 using TylorTrubPortfolio.DTO;
-using TylorTrubPortfolio.Utility;
+using TylorTrubPortfolio.Client.BL;
 using TylorTrubPortfolio.DTO.ViewModels;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers

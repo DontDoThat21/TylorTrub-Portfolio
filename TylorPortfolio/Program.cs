@@ -3,7 +3,7 @@ using TylorTrubPortfolio.Server.BL.Data;
 using TylorTrubPortfolio.Server.BL.Repository;
 using TylorTrubPortfolio.Server.BL.Repository.IRepository;
 using Microsoft.AspNetCore.Identity;
-using TylorTrubPortfolio.Utility;
+using TylorTrubPortfolio.Client.BL;
 using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);

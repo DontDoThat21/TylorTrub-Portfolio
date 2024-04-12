@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using TylorTrubPortfolio.Utility;
+using TylorTrubPortfolio.Client.BL;
 
 namespace TylorTrubPortfolio.Areas.Identity.Pages.Account
 {

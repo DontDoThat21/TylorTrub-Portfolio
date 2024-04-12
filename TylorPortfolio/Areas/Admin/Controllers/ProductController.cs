@@ -6,7 +6,7 @@ using System.Data;
 using TylorTrubPortfolio.Server.BL.Repository.IRepository;
 using TylorTrubPortfolio.DTO;
 using TylorTrubPortfolio.DTO.ViewModels;
-using TylorTrubPortfolio.Utility;
+using TylorTrubPortfolio.Client.BL;
 
 namespace BulkyBookWeb.Areas.Admin.Controllers
 {
