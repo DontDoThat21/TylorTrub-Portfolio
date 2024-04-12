@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TylorTrubPortfolio.DataAccess.Helpers
+namespace TylorTrubPortfolio.Server.BL.Helpers
 {
     public class PortfolioImageHelper
     {

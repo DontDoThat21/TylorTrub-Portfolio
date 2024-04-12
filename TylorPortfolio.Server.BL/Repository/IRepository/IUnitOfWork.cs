@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TylorTrubPortfolio.DataAccess.Repository.IRepository
+namespace TylorTrubPortfolio.Server.BL.Repository.IRepository
 {
     public interface IUnitOfWork
     {

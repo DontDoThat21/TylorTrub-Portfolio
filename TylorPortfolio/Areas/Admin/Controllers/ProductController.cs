@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Data;
-using TylorTrubPortfolio.DataAccess.Repository.IRepository;
-using TylorTrubPortfolio.Models;
-using TylorTrubPortfolio.Models.ViewModels;
+using TylorTrubPortfolio.Server.BL.Repository.IRepository;
+using TylorTrubPortfolio.DTO;
+using TylorTrubPortfolio.DTO.ViewModels;
 using TylorTrubPortfolio.Utility;
 
 namespace BulkyBookWeb.Areas.Admin.Controllers

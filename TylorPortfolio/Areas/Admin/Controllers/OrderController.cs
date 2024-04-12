@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Stripe.Checkout;
 using Stripe;
 using System.Security.Claims;
-using TylorTrubPortfolio.DataAccess.Repository.IRepository;
-using TylorTrubPortfolio.Models;
+using TylorTrubPortfolio.Server.BL.Repository.IRepository;
+using TylorTrubPortfolio.DTO;
 using TylorTrubPortfolio.Utility;
-using TylorTrubPortfolio.Models.ViewModels;
+using TylorTrubPortfolio.DTO.ViewModels;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers
 {

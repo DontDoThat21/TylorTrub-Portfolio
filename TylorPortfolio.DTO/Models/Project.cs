@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TylorTrubPortfolio.Models
+namespace TylorTrubPortfolio.DTO
 {
     public class Project
     {

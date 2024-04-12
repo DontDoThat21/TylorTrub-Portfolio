@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
-using TylorTrubPortfolio.DataAccess.Data;
-using TylorTrubPortfolio.DataAccess.Repository.IRepository;
-using TylorTrubPortfolio.Models;
+using TylorTrubPortfolio.Server.BL.Data;
+using TylorTrubPortfolio.Server.BL.Repository.IRepository;
+using TylorTrubPortfolio.DTO;
 using TylorTrubPortfolio.Utility;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers

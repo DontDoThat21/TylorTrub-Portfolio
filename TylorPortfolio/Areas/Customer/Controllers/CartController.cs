@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Stripe.Checkout;
 using System.Security.Claims;
-using TylorTrubPortfolio.DataAccess.Repository.IRepository;
-using TylorTrubPortfolio.Models;
-using TylorTrubPortfolio.Models.ViewModels;
+using TylorTrubPortfolio.Server.BL.Repository.IRepository;
+using TylorTrubPortfolio.DTO;
+using TylorTrubPortfolio.DTO.ViewModels;
 using TylorTrubPortfolio.Utility;
 
 namespace TylorTrubPortfolio.Areas.Customer.Controllers

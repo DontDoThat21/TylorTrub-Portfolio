@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace TylorTrubPortfolio.DataAccess.Migrations
+namespace TylorTrubPortfolio.Server.BL.Migrations
 {
     /// <inheritdoc />
     public partial class AddImageUrlToProduct : Migration

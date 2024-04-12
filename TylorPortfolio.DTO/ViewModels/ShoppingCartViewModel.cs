@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TylorTrubPortfolio.Models.ViewModels
+namespace TylorTrubPortfolio.DTO.ViewModels
 {
     public class ShoppingCartViewModel
     {

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace TylorTrubPortfolio.DataAccess.Migrations
+namespace TylorTrubPortfolio.Server.BL.Migrations
 {
     /// <inheritdoc />
     public partial class correctedFlowAndTyposAndOrderOfImages : Migration

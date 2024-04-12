@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Resources;
-using TylorTrubPortfolio.DataAccess.Helpers;
-using TylorTrubPortfolio.Models;
+using TylorTrubPortfolio.Server.BL.Helpers;
+using TylorTrubPortfolio.DTO;
 
-namespace TylorTrubPortfolio.DataAccess.Data
+namespace TylorTrubPortfolio.Server.BL.Data
 {
     public class PortfolioDBContext : IdentityDbContext
     {

@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using TylorTrubPortfolio.DataAccess.Data;
-using TylorTrubPortfolio.DataAccess.Repository;
-using TylorTrubPortfolio.DataAccess.Repository.IRepository;
+using TylorTrubPortfolio.Server.BL.Data;
+using TylorTrubPortfolio.Server.BL.Repository;
+using TylorTrubPortfolio.Server.BL.Repository.IRepository;
 using Microsoft.AspNetCore.Identity;
 using TylorTrubPortfolio.Utility;
 using Stripe;

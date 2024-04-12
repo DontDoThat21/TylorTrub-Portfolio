@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TylorTrubPortfolio.DataAccess.Data;
+using TylorTrubPortfolio.Server.BL.Data;
 
 #nullable disable
 
-namespace TylorTrubPortfolio.DataAccess.Migrations
+namespace TylorTrubPortfolio.Server.BL.Migrations
 {
     [DbContext(typeof(PortfolioDBContext))]
     [Migration("20230608215830_fixedProjectSeeds3")]
@@ -232,7 +232,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.Category", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -273,7 +273,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.Company", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.Company", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -337,7 +337,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.Game", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.Game", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -372,7 +372,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.Motorcycle", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.Motorcycle", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -461,7 +461,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.MotorcycleVideo", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.MotorcycleVideo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -495,7 +495,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.OrderDetail", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.OrderDetail", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -524,7 +524,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.ToTable("OrderDetails");
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.OrderHeader", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.OrderHeader", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -600,7 +600,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.ToTable("OrderHeaders");
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.PortfolioImage", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.PortfolioImage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -823,7 +823,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.Product", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -949,7 +949,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.ProductImage", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.ProductImage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -971,7 +971,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.ToTable("ProductImages");
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.Project", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.Project", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1082,7 +1082,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.ShoppingCart", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.ShoppingCart", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1110,7 +1110,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.ToTable("ShoppingCarts");
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.ApplicationUser", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -1190,15 +1190,15 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.OrderDetail", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.OrderDetail", b =>
                 {
-                    b.HasOne("TylorTrubPortfolio.Models.OrderHeader", "OrderHeader")
+                    b.HasOne("TylorTrubPortfolio.DTO.OrderHeader", "OrderHeader")
                         .WithMany()
                         .HasForeignKey("OrderHeaderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TylorTrubPortfolio.Models.Product", "Product")
+                    b.HasOne("TylorTrubPortfolio.DTO.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1209,9 +1209,9 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.OrderHeader", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.OrderHeader", b =>
                 {
-                    b.HasOne("TylorTrubPortfolio.Models.ApplicationUser", "ApplicationUser")
+                    b.HasOne("TylorTrubPortfolio.DTO.ApplicationUser", "ApplicationUser")
                         .WithMany()
                         .HasForeignKey("ApplicationUserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1220,9 +1220,9 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.Navigation("ApplicationUser");
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.Product", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.Product", b =>
                 {
-                    b.HasOne("TylorTrubPortfolio.Models.Category", "Category")
+                    b.HasOne("TylorTrubPortfolio.DTO.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1231,9 +1231,9 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.ProductImage", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.ProductImage", b =>
                 {
-                    b.HasOne("TylorTrubPortfolio.Models.Product", "Product")
+                    b.HasOne("TylorTrubPortfolio.DTO.Product", "Product")
                         .WithMany("ProductImages")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1242,15 +1242,15 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.ShoppingCart", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.ShoppingCart", b =>
                 {
-                    b.HasOne("TylorTrubPortfolio.Models.ApplicationUser", "ApplicationUser")
+                    b.HasOne("TylorTrubPortfolio.DTO.ApplicationUser", "ApplicationUser")
                         .WithMany()
                         .HasForeignKey("ApplicationUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TylorTrubPortfolio.Models.Product", "Product")
+                    b.HasOne("TylorTrubPortfolio.DTO.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1261,9 +1261,9 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.ApplicationUser", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.ApplicationUser", b =>
                 {
-                    b.HasOne("TylorTrubPortfolio.Models.Company", "Company")
+                    b.HasOne("TylorTrubPortfolio.DTO.Company", "Company")
                         .WithMany()
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1272,7 +1272,7 @@ namespace TylorTrubPortfolio.DataAccess.Migrations
                     b.Navigation("Company");
                 });
 
-            modelBuilder.Entity("TylorTrubPortfolio.Models.Product", b =>
+            modelBuilder.Entity("TylorTrubPortfolio.DTO.Product", b =>
                 {
                     b.Navigation("ProductImages");
                 });

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TylorTrubPortfolio.DataAccess.Data;
-using TylorTrubPortfolio.DataAccess.Repository.IRepository;
-using TylorTrubPortfolio.Models;
-using TylorTrubPortfolio.Models.ViewModels;
+using TylorTrubPortfolio.Server.BL.Data;
+using TylorTrubPortfolio.Server.BL.Repository.IRepository;
+using TylorTrubPortfolio.DTO;
+using TylorTrubPortfolio.DTO.ViewModels;
 
 namespace TylorTrubPortfolio.Areas.Admin.Controllers
 {
