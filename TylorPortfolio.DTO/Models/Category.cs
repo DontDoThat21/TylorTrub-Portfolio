@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace TylorTrubPortfolio.DTO
+namespace TylorTrubPortfolio.DTO.Models
 {
     public class Category
     {

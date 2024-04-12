@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TylorTrubPortfolio.DTO
+namespace TylorTrubPortfolio.DTO.Models
 {
     public class PortfolioImage
     {

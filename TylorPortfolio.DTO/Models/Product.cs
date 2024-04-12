@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
-namespace TylorTrubPortfolio.DTO
+namespace TylorTrubPortfolio.DTO.Models
 {
     public class Product
     {
