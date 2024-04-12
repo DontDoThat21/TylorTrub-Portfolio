@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TylorPortfolio.Models\TylorTrubPortfolio.Models.csproj" />
+    <ProjectReference Include="..\TylorPortfolio.DTO\TylorTrubPortfolio.DTO.csproj" />
   </ItemGroup>
 
 </Project>
