@@ -20,7 +20,7 @@ namespace TylorTrubPortfolio.Server.BL.Repository
 
         public void Update(PortfolioImage obj)
         {
-            _db.PortfolioImageVideos.Update(obj);
+            _db.PortfolioImages.Update(obj);
         }
     }
 }
