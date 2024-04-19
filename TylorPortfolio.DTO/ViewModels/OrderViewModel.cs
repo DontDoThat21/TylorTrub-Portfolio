@@ -7,9 +7,9 @@ using TylorTrubPortfolio.DTO.Models;
 
 namespace TylorTrubPortfolio.DTO.ViewModels
 {
-	public class OrderViewModel
-	{
-		public OrderHeader OrderHeader { get; set; }
-		public IEnumerable<OrderDetail> OrderDetail { get; set; }
-	}
+	//public class OrderViewModel
+	//{
+	//	public OrderHeader OrderHeader { get; set; }
+	//	public IEnumerable<OrderDetail> OrderDetail { get; set; }
+	//}
 }
