@@ -9,10 +9,10 @@ using TylorTrubPortfolio.DTO.Models;
 
 namespace TylorTrubPortfolio.DTO.ViewModels
 {
-    //public class ProductViewModel
-    //{
-    //    public Product Product { get; set; }
-    //    [ValidateNever]
-    //    public IEnumerable<SelectListItem> CategoryList { get; set; }
-    //}
+    public class ProductViewModel
+    {
+        public Product Product { get; set; }
+        [ValidateNever]
+        public IEnumerable<SelectListItem> CategoryList { get; set; }
+    }
 }

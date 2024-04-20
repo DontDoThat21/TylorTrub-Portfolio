@@ -7,10 +7,10 @@ using TylorTrubPortfolio.DTO.Models;
 
 namespace TylorTrubPortfolio.DTO.ViewModels
 {
-    //public class HomeViewModel
-    //{
-    //    public List<MotorcycleVideo> MotorcycleVideoList { get; set; }
-    //    public List<PortfolioImage> PortfolioImageList { get; set; }
+    public class HomeViewModel
+    {
+        public List<MotorcycleVideo> MotorcycleVideoList { get; set; }
+        public List<PortfolioImage> PortfolioImageList { get; set; }
 
-    //}
+    }
 }
