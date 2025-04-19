@@ -529,11 +529,6 @@ namespace TylorTrubPortfolio.Server.BL.Data
             
             modelBuilder.Entity<Project>().HasData(
                 new Project {
-                    Id = 7, Name = "ModernDesignPizzaStore", Language = "C#.NET Core WPF", Url = "https://github.com/DontDoThat21/ModernDesignPizzaStore", ProjectPhoto = "net7ModernWpf.png"
-                });
-            
-            modelBuilder.Entity<Project>().HasData(
-                new Project {
                     Id = 8, Name = "FlickrPhotoSearcher", Language = "C#.NET FW", Url = "https://github.com/DontDoThat21/PhotoSearcherFlickrAPI", ProjectPhoto = "b.png"
                 });
             
