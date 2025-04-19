@@ -2,7 +2,7 @@
 <!-- This is the Utility/client side/business logic service layer of the application.
 See data TylorTrub-PortfolioBlazor.DataAccess's root architecture image for more details. -->
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
