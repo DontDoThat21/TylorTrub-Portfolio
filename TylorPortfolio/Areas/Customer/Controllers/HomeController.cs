@@ -40,7 +40,7 @@ namespace TylorTrubPortfolio.Areas.Customer.Controllers
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
-
+            // should probably refactor/rework identity with .NET 8/9 changing things (i think its far simpler now)
             if (claim.Value != null)
             {
                 HttpContext.Session.SetInt32(SD.SessionCart,

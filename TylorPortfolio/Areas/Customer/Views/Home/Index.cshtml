@@ -1,56 +1,61 @@
-﻿ @{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
 @model HomeViewModel
 
-<div class="container text-center">
-    <div class="card">
-        <h3 class="display-4 card-header">Hello, my name is Tylor C. Trub.</h3>
-        <div class="card-body p-4">
-
-            <table class="table table-bordered table-striped overflow-hidden">
-                <tbody>
-                    <tr>
-                        <td>
-                            I am a full-stack developer, with a C#.NET back-end focus.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Check out my <a asp-controller="Projects" asp-action="Index">projects</a>, example labs, and examples of my work above.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            I host the majority of my code on <a href="https://github.com/DontDoThat21">GitHub</a>.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Relax and play some <a asp-controller="Games" asp-action="Index">HTML5/CSS3 games</a> I've implemented.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Available 8am to 5pm EST. <a href="mailto:tylortrub@gmail.com"/>tylortrub@gmail.com
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2 class="text-center">
-                <a asp-controller="Home" asp-action="MVCDemo">
-                    Check out my latest MVC .NET 8 (still preview 5/27/23) project!
-                </a>
-            </h2>
-        </div>        
-    </div>    
+<div class="container">
+    <div class="profile-card-container">
+        <div class="profile-card shadow">
+            <div class="profile-header">
+                <div class="profile-intro">
+                    <h1 class="profile-name">Tylor C. Trub</h1>
+                    <div class="profile-title">
+                        <span class="badge bg-primary"><i class="bi bi-code-slash"></i> Full-Stack Developer</span>
+                        <span class="badge bg-secondary"><i class="bi bi-microsoft"></i> C#.NET Specialist</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile-body">
+                <div class="profile-info">
+                    <div class="info-item">
+                        <i class="bi bi-laptop"></i>
+                        <p>I am a full-stack developer, with a C#.NET back-end focus.</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="bi bi-folder-check"></i>
+                        <p>Check out my <a asp-controller="Projects" asp-action="Index" class="profile-link">projects</a>, example labs, and examples of my work above.</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="bi bi-github"></i>
+                        <p>I host the majority of my code on <a href="https://github.com/DontDoThat21" class="profile-link" target="_blank">GitHub</a>.</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="bi bi-controller"></i>
+                        <p>Relax and play some <a asp-controller="Games" asp-action="Index" class="profile-link">HTML5/CSS3 games</a> I've created.</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="bi bi-calendar-check"></i>
+                        <p>Available 8am to 5pm EST. <a href="mailto:tylortrub@gmail.com" class="profile-link">tylortrub@gmail.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="profile-cta">
+                    <a asp-controller="Home" asp-action="MVCDemo" class="btn btn-primary btn-lg">
+                        <i class="bi bi-arrow-right-circle"></i> Check out my latest MVC .NET 8 project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<br />
-<div class="border-bottom" style="height: 5px; width: 100%;"></div>
-<br />
+<div class="section-divider">
+    <div class="container">
+        <hr>
+    </div>
+</div>
 
 <div class="container-lg">
     @for (int i = 0; i < Model.PortfolioImageList.Count; i++)
@@ -67,7 +72,7 @@
 
                 </div>
                 <div class="row"></div>
-                <div class="col-6" >
+                <div class="col-6">
                     <br>
                     @if (i < Model.PortfolioImageList.Count - 1)
                     {
@@ -93,7 +98,7 @@
                 </div>
                 <div class="row"></div>
                 <div class="col-6"></div>
-                <div class="col-6" >
+                <div class="col-6">
                     <br>
                     @if (i < Model.PortfolioImageList.Count - 1)
                     {
@@ -102,5 +107,16 @@
                 </div>
             </div>
         }
-    } 
+    }
 </div>
+
+@section Scripts {
+    <link href="~/css/profile-card.css" rel="stylesheet" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.querySelector('.profile-card').classList.add('loaded');
+            }, 100);
+        });
+    </script>
+}
