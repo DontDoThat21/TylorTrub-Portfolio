@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33626.354
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorTrubPortfolio", "TylorPortfolio\TylorTrubPortfolio.csproj", "{2CEDF8C4-F32A-4CA9-9217-1D825C084A04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio", "Portfolio\Portfolio.csproj", "{2CEDF8C4-F32A-4CA9-9217-1D825C084A04}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorTrubPortfolio.Server.BL", "TylorPortfolio.Server.BL\TylorTrubPortfolio.Server.BL.csproj", "{DC1022D8-C23A-4C0F-B82F-4D649B7D179C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Server.BL", "Portfolio.Server.BL\Portfolio.Server.BL.csproj", "{DC1022D8-C23A-4C0F-B82F-4D649B7D179C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorTrubPortfolio.DTO", "TylorPortfolio.DTO\TylorTrubPortfolio.DTO.csproj", "{4ED8A550-FDE2-4323-AEFD-A3C662A50EB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.DTO", "Portfolio.DTO\Portfolio.DTO.csproj", "{4ED8A550-FDE2-4323-AEFD-A3C662A50EB8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorTrubPortfolio.Client.BL", "TylorPortfolio.Client.BL\TylorTrubPortfolio.Client.BL.csproj", "{508D07F4-028D-4816-90E2-B0D31943D895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Client.BL", "Portfolio.Client.BL\Portfolio.Client.BL.csproj", "{508D07F4-028D-4816-90E2-B0D31943D895}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
